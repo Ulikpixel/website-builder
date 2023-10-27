@@ -4,7 +4,7 @@ import MainHeading from '@/components/main-heading/main-heading'
 
 const Home: NextPage = () => (
   <MainHeading>
-    <div>hello</div>
+    <div>hello bro</div>
   </MainHeading>
 )
 
