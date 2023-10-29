@@ -1,0 +1,56 @@
+{
+  "components": [
+    {
+      "name": "basket",
+      "display_name": null,
+      "created_at": "2023-10-28T15:52:22.731Z",
+      "updated_at": "2023-10-28T15:52:32.946Z",
+      "id": 4799678,
+      "schema": {
+        "asd": {
+          "type": "text"
+        },
+        "asdad": {
+          "type": "textarea"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "basket",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null
+    },
+    {
+      "name": "Example-first",
+      "display_name": null,
+      "created_at": "2023-10-28T13:35:30.349Z",
+      "updated_at": "2023-10-28T13:35:57.950Z",
+      "id": 4799227,
+      "schema": {
+        "title_example": {
+          "type": "text"
+        },
+        "text_example": {
+          "type": "textarea"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Example-first",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null
+    }
+  ]
+}
