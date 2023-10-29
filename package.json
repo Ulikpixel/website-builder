@@ -12,7 +12,7 @@
     "test:coverage": "yarpm run test --coverage",
     "test:debug": "yarpm run test --debug --detectOpenHandles",
     "test:ci": "yarpm run test --runInBand --no-cache --ci",
-    "test": "NODE_ENV=test jest",
+    "test": "cross-env NODE_ENV=test jest",
     "typecheck": "tsc --noEmit",
     "clean": "rimraf out/",
     "prepare": "is-ci || husky install",
@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "clsx": "^2.0.0",
+    "cross-env": "^7.0.3",
     "is-ci": "^3.0.1",
     "next": "^13.4.19",
     "react": "^18.2.0",
