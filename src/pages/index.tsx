@@ -1,10 +1,14 @@
 import React from 'react'
 import { NextPage } from 'next'
-import MainHeading from '@/components/Atoms/main-heading/main-heading'
+import Button from '@/components/Atoms/Organick/button/button'
 
 const Home: NextPage = () => (
   <div className='flex flex-col gap-4'>
-    <MainHeading>main heading</MainHeading>
+    <div>
+      <Button icon variant='yellow'>
+        Default Button
+      </Button>
+    </div>
     <div className='flex gap-4'>
       <div className='w-6 h-6 bg-organick-blue-dark' />
       <div className='w-6 h-6 bg-organick-green' />
@@ -12,7 +16,7 @@ const Home: NextPage = () => (
       <div className='w-6 h-6 bg-organick-grey' />
       <div className='w-6 h-6 bg-organick-white' />
       <div className='w-6 h-6 bg-organick-green-white' />
-      <div className='w-6 h-6 bg-organick-dark' />M
+      <div className='w-6 h-6 bg-organick-dark' />
     </div>
     <div>
       <p>full text</p>
