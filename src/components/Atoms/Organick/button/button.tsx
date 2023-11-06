@@ -31,8 +31,8 @@ const Button: FC<ButtonProps> = ({ children, variant = 'blue-dark', icon }) => (
     type='button'
     className={clsx(
       `
-        px-10 pt-2.5 pb-3 rounded-xl font-roboto font-bold 
-        text-xl transition-colors flex gap-2 items-center
+        rounded-xl font-roboto font-bold transition-colors flex gap-2 items-center
+        px-6 py-1 text-xl sm:pt-1 sm:pb-1.5 lg:px-10 lg:pt-2.5 lg:pb-3
       `,
       variants[variant],
     )}

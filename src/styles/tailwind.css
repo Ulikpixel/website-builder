@@ -6,6 +6,14 @@
 @tailwind utilities;
 
 @layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: theme("colors.organick-blue-dark");
+  }
   h1 {
     @apply text-organick-h1;
   }
@@ -26,9 +34,10 @@
   }
   p {
     font-family: "Open Sans", sans-serif;
-    font-size: 18px;
     font-weight: 400;
-    line-height: 25px;
+    font-size: 14px;
+    line-height: 17px;
+    color: theme("colors.organick-dark");
   }
   ol {
     list-style-type: decimal;
@@ -37,11 +46,64 @@
   ol li::marker {
     font-weight: 700;
   }
-  li {
+  ol li {
     font-family: "Open Sans", sans-serif;
-    font-size: 18px;
     font-weight: 400;
-    line-height: 25px;
     color: theme("colors.organick-dark");
+    font-size: 14px;
+    line-height: 20px;
+  }
+  @screen sm {
+    h1 {
+      @apply text-organick-h1-sm;
+    }
+    h2 {
+      @apply text-organick-h2-sm;
+    }
+    h3 {
+      @apply text-organick-h3-sm;
+    }
+    h4 {
+      @apply text-organick-h4-sm;
+    }
+    h5 {
+      @apply text-organick-h5-sm;
+    }
+    h6 {
+      @apply text-organick-h6-sm;
+    }
+    p {
+      font-size: 16px;
+      line-height: 20px;
+    }
+    ol li {
+      font-size: 18px;
+      line-height: 25px;
+    }
+  }
+
+  @screen lg {
+    h1 {
+      @apply text-organick-h1-lg;
+    }
+    h2 {
+      @apply text-organick-h2-lg;
+    }
+    h3 {
+      @apply text-organick-h3-lg;
+    }
+    h4 {
+      @apply text-organick-h4-lg;
+    }
+    h5 {
+      @apply text-organick-h5-lg;
+    }
+    h6 {
+      @apply text-organick-h6-lg;
+    }
+    p {
+      font-size: 18px;
+      line-height: 25px;
+    }
   }
 }

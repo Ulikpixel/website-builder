@@ -24,7 +24,7 @@ const Home: NextPage = () => (
       <p className='font-open-sans'>full text</p>
     </div>
     <div>
-      <h1>Display H1 Text</h1>
+      <h1>Heading H1 Text</h1>
       <h2>Heading H2 Text</h2>
       <h3>Heading H3 Text</h3>
       <h4>Heading H4 Text</h4>
