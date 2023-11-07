@@ -15,5 +15,5 @@ export interface InfoSlugList {
 }
 
 export interface InfoSlugListResponse {
-  links: InfoSlugList;
+  links?: InfoSlugList;
 }

@@ -18,7 +18,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     },
   })
 
-  const paths = Object.values(data.links) // Object<Object> парсим в array
+  const paths = Object.values(data.links || []) // Object<Object> парсим в array
     .filter((story) => {
       if (story.is_folder) {
         // убираем папки
