@@ -8,7 +8,7 @@ Starter template for building a project using React, Typescript, Next.js, Jest, 
 2. `cd` in the project directory.
 3. If you cloned the project, make sure you remove the remote reference to this project by running `git remote rm origin`.
 4. Copy `.env.example` to `.env` as that file is used to load up all your environment variables.
-4. Run `yarn install` or `npm install` to install all dependencies.
+5. Run `yarn install` or `npm install` to install all dependencies.
 
 ## Commands
 
@@ -28,19 +28,19 @@ All source code is located in the `src/` directory.
 
 1. All Next.js entrypoints are housed in the `src/pages` directory as a default.
 
-    - Currently has `_app.tsx` which imports TailwindCSS.
-    - There's also a sample `index.tsx`.
+   - Currently has `_app.tsx` which imports TailwindCSS.
+   - There's also a sample `index.tsx`.
 
-    **NOTE:** Feel free to move `pages` outside of `src/` if that's what you prefer. You'll just need to restart your local development server and everything should continue working as normal.
+   **NOTE:** Feel free to move `pages` outside of `src/` if that's what you prefer. You'll just need to restart your local development server and everything should continue working as normal.
 
 2. `src/components` are all stateless reusable components.
 3. `src/css` folder is there just to house any CSS.
 
-    - Currently contains the TailwindCSS initialization CSS file.
+   - Currently contains the TailwindCSS initialization CSS file.
 
 4. All env variables are available in `.env` files (`.env` file isn't committed). Whenever you update `.env`, please update `.env.example` and `.env.test` and `next.config.js` to proxy all environment variables properly.
 
-    - You can access these variables in the app source code anywhere using `process.env.<VAR_NAME>`.
+   - You can access these variables in the app source code anywhere using `process.env.<VAR_NAME>`.
 
 If you feel like changing the directory structure, please change the appropriate settings in the following files:
 

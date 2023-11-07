@@ -1,1 +1,2 @@
-export const APP_NAME = process.env.NEXT_PUBLIC_APP_NAME
+export const PREVIEW_TOKEN_STORYBLOK = process.env.PREVIEW_SECRET_TOKEN
+export const API_TOKEN_STORYBLOK = process.env.STORYBLOK_API_TOKEN
