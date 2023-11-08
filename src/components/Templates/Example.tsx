@@ -1,5 +1,5 @@
 import { ExampleStoryblok } from '@/types/storyblok-bloks/storyblok-bloks-types'
-import { StoryblokComponent } from '@storyblok/react'
+import { StoryblokComponent, storyblokEditable } from '@storyblok/react'
 import React, { FC } from 'react'
 
 interface ExampleProps {
@@ -7,7 +7,10 @@ interface ExampleProps {
 }
 
 const Example: FC<ExampleProps> = ({ blok }) => (
-  <main>
+  /* eslint-disable react/jsx-props-no-spreading */
+  <main className='text-center' {...storyblokEditable(blok)}>
+    <h5>{blok.title}</h5>
+    <p>{blok.description}</p>
     {blok.list?.map(
       // eslint-disable-next-line
       (nestedBlok) => <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />,

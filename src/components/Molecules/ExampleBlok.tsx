@@ -1,8 +1,13 @@
+import { ExampleBlockStoryblok } from '@/types/storyblok-bloks/storyblok-bloks-types'
 import React, { FC } from 'react'
 
-const ExampleBlok: FC = () => (
+interface ExampleBlokProps {
+  blok: ExampleBlockStoryblok
+}
+
+const ExampleBlok: FC<ExampleBlokProps> = ({ blok }) => (
   <div>
-    <h3>Example Block</h3>
+    <p>{blok.name}</p>
   </div>
 )
 
