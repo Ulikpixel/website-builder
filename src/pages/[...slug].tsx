@@ -1,6 +1,7 @@
 import { Language } from '@/config/language'
 import { Version } from '@/config/version'
 import { InfoSlugListResponse } from '@/types/storyblok-types'
+import { API_TOKEN_STORYBLOK, PREVIEW_TOKEN_STORYBLOK } from '@/config'
 import { Params, apiGet } from '@/utils/api'
 import { ISbStoryData, StoryblokComponent, useStoryblokState } from '@storyblok/react'
 import { GetStaticPaths, GetStaticProps } from 'next'
@@ -47,6 +48,7 @@ export const getStaticProps: GetStaticProps = async ({ params, locale, preview =
   const apiParams: Params = {
     version: preview ? Version.Draft : Version.Published,
     language: locale === Language.En ? Language.Default : Language.Ru,
+    token: preview ? PREVIEW_TOKEN_STORYBLOK : API_TOKEN_STORYBLOK,
   }
 
   const slugs: string = Array.isArray(params.slug) ? params.slug.join('/') : ''

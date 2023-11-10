@@ -1,4 +1,3 @@
-import { API_TOKEN_STORYBLOK } from '@/config'
 import { LanguageType } from '@/types/language-types'
 import { VersionType } from '@/types/verstion-types'
 
@@ -26,10 +25,7 @@ interface IUrlParams extends URLSearchParams {
 
 export const apiGet = async <T>(options: ApiGetArguments): Promise<T> => {
   const { params, url } = options
-  const newParams = new URLSearchParams({
-    token: API_TOKEN_STORYBLOK,
-    ...params,
-  } as IUrlParams)
+  const newParams = new URLSearchParams(params as IUrlParams)
 
   try {
     const response = await fetch(`${baseUrl}${url}?${newParams}`, { headers })
