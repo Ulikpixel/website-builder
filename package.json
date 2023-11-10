@@ -20,14 +20,14 @@
     "generate-sb-types": "storyblok-generate-ts source=./src/config/storyblok/components.261940.json target=./src/types/storyblok-bloks/storyblok-bloks-types.ts"
   },
   "dependencies": {
-    "@storyblok/react": "^2.4.7",
+    "@storyblok/react": "^1.3.3",
     "clsx": "^2.0.0",
     "cross-env": "^7.0.3",
     "is-ci": "^3.0.1",
     "next": "^13.4.19",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "storyblok": "^3.25.3"
+    "storyblok": "^1.4.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.7.1",
