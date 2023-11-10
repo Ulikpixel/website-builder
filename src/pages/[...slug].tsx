@@ -2,12 +2,12 @@ import { Language } from '@/config/language'
 import { Version } from '@/config/version'
 import { InfoSlugListResponse } from '@/types/storyblok-types'
 import { Params, apiGet } from '@/utils/api'
-import { StoryblokComponent, StoryData, useStoryblokState } from '@storyblok/react'
+import { ISbStoryData, StoryblokComponent, useStoryblokState } from '@storyblok/react'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import React, { FC } from 'react'
 
 interface SlugProps {
-  story: StoryData | null
+  story: ISbStoryData | null
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -50,7 +50,7 @@ export const getStaticProps: GetStaticProps = async ({ params, locale, preview =
   }
 
   const slugs: string = Array.isArray(params.slug) ? params.slug.join('/') : ''
-  const response = await apiGet<{ story?: StoryData }>({
+  const response = await apiGet<{ story?: ISbStoryData }>({
     url: `stories/${slugs}`,
     params: apiParams,
   })
@@ -64,12 +64,12 @@ export const getStaticProps: GetStaticProps = async ({ params, locale, preview =
 }
 
 const Slug: FC<SlugProps> = ({ story }) => {
-  const storyState = useStoryblokState(story ?? undefined, {}, true)
+  const storyState = useStoryblokState(story)
 
   if (story === null) {
     return <h1 className='text-center'>Storyblok error</h1>
   }
-  return <StoryblokComponent blok={storyState.content} />
+  return <StoryblokComponent blok={storyState?.content} />
 }
 
 export default Slug
