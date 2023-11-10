@@ -8,6 +8,14 @@ export default async function preview(req: NextApiRequest, res: NextApiResponse)
   }
 
   res.setPreviewData({})
+  const cookies = res.getHeader('Set-Cookie') as string[]
+  res.setHeader(
+    'Set-Cookie',
+    cookies.map((cookie) =>
+      cookie.replace('SameSite=Lax', 'SameSite=None;Secure')
+    )
+  )
+
   const updatedSlug = slug === 'home' ? '' : slug
 
   res.redirect(`/${updatedSlug}`)
