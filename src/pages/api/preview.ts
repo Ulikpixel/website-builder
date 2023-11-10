@@ -7,6 +7,8 @@ export default async function preview(req: NextApiRequest, res: NextApiResponse)
     return res.status(401).json({ message: 'Invalid token' })
   }
 
+  res.setPreviewData({})
+
   const cookies = res.getHeader('Set-Cookie') as string[]
   res.setHeader(
     'Set-Cookie',
@@ -14,8 +16,6 @@ export default async function preview(req: NextApiRequest, res: NextApiResponse)
       cookie.replace('SameSite=Lax', 'SameSite=None')
     )
   )
-
-  res.setPreviewData({})
 
   const updatedSlug = slug === 'home' ? '' : slug
 

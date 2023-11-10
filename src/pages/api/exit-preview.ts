@@ -1,6 +1,8 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 
 export default async function exit(req: NextApiRequest, res: NextApiResponse) {
+  res.clearPreviewData()
+
   const cookies = res.getHeader('Set-Cookie') as string[]
   res.setHeader(
     'Set-Cookie',
@@ -8,8 +10,6 @@ export default async function exit(req: NextApiRequest, res: NextApiResponse) {
       cookie.replace('SameSite=Lax', 'SameSite=None')
     )
   )
-
-  res.clearPreviewData()
 
   const { slug } = req.query
 
