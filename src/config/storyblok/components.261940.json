@@ -3,9 +3,9 @@
     {
       "name": "example",
       "display_name": null,
-      "created_at": "2023-11-07T10:46:29.639Z",
-      "updated_at": "2023-11-07T10:48:52.559Z",
-      "id": 4847331,
+      "created_at": "2023-11-10T13:56:52.856Z",
+      "updated_at": "2023-11-10T13:57:10.550Z",
+      "id": 4865730,
       "schema": {
         "title": {
           "type": "text"
@@ -13,7 +13,7 @@
         "description": {
           "type": "textarea"
         },
-        "list": {
+        "blocks": {
           "type": "bloks"
         }
       },
@@ -32,9 +32,9 @@
     {
       "name": "example-block",
       "display_name": null,
-      "created_at": "2023-11-07T10:47:02.144Z",
-      "updated_at": "2023-11-07T10:47:15.902Z",
-      "id": 4847333,
+      "created_at": "2023-11-10T13:57:17.252Z",
+      "updated_at": "2023-11-10T13:57:22.620Z",
+      "id": 4865731,
       "schema": {
         "name": {
           "type": "text"

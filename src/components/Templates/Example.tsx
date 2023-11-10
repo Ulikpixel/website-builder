@@ -11,7 +11,7 @@ const Example: FC<ExampleProps> = ({ blok }) => (
   <main className='text-center' {...storyblokEditable(blok)}>
     <h5>{blok.title}</h5>
     <p>{blok.description}</p>
-    {blok.list?.map(
+    {blok.blocks?.map(
       // eslint-disable-next-line
       (nestedBlok) => <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />,
     )}

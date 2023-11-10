@@ -1,7 +1,7 @@
 export interface ExampleStoryblok {
   title?: string;
   description?: string;
-  list?: any[];
+  blocks?: any[];
   _uid: string;
   component: 'example';
   [k: string]: any;
