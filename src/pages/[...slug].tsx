@@ -8,7 +8,6 @@ import React, { FC } from 'react'
 
 interface SlugProps {
   story: StoryData | null
-  preview: boolean
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -59,14 +58,13 @@ export const getStaticProps: GetStaticProps = async ({ params, locale, preview =
   return {
     props: {
       story: response.story || null,
-      preview,
     },
     revalidate: 3600,
   }
 }
 
-const Slug: FC<SlugProps> = ({ story, preview }) => {
-  const storyState = useStoryblokState(story ?? undefined, {}, preview)
+const Slug: FC<SlugProps> = ({ story }) => {
+  const storyState = useStoryblokState(story ?? undefined, {}, true)
 
   if (story === null) {
     return <h1 className='text-center'>Storyblok error</h1>
