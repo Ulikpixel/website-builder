@@ -1,11 +1,12 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react'
 import { AppProps } from 'next/app'
-import { apiPlugin, storyblokInit } from '@storyblok/react'
 import '@/styles/tailwind.css'
 import { API_TOKEN_STORYBLOK } from '@/config'
 import Example from '@/components/Templates/Example'
 import ExampleBlok from '@/components/Molecules/ExampleBlok'
+// @ts-ignore
+import { apiPlugin, storyblokInit } from '@storyblok/react/rsc'
 
 const components = {
   example: Example,
