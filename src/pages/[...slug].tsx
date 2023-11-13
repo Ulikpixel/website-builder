@@ -13,7 +13,7 @@ interface SlugProps {
   story: ISbStoryData | null
 }
 
-export const getStaticPaths: GetStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths = async ({ locales = [] }) => {
   const data = await apiGet<InfoSlugListResponse>({
     url: 'links/',
     params: {
@@ -29,7 +29,12 @@ export const getStaticPaths: GetStaticPaths = async () => {
       }
       return story.slug
     })
-    .map((story) => ({ params: { slug: story.slug.split('/') } })) // парсим для getStaticPaths
+    .map((story) => {
+      // парсим для getStaticPaths
+      const slug = story.slug.split('/')
+      return locales.map((locale) => ({ params: { slug }, locale }))
+    })
+    .flat()
 
   return {
     paths,
