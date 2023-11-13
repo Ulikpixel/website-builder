@@ -3,9 +3,10 @@ import { Version } from '@/config/version'
 import { InfoSlugListResponse } from '@/types/storyblok-types'
 import { API_TOKEN_STORYBLOK, PREVIEW_TOKEN_STORYBLOK } from '@/config'
 import { Params, apiGet } from '@/utils/api'
-import { ISbStoryData, StoryblokComponent, useStoryblokState } from '@storyblok/react'
+import { ISbStoryData } from '@storyblok/react'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import React, { FC } from 'react'
+import StoryblokProvider from '@/components/Storyblok/StoryblokProvider'
 
 interface SlugProps {
   story: ISbStoryData | null
@@ -67,12 +68,11 @@ export const getStaticProps: GetStaticProps = async ({ params, locale, preview =
 }
 
 const Slug: FC<SlugProps> = ({ story }) => {
-  const storyState = useStoryblokState(story)
-
   if (story === null) {
     return <h1 className='text-center'>Storyblok error</h1>
   }
-  return <StoryblokComponent blok={storyState?.content} />
+
+  return <StoryblokProvider story={story} />
 }
 
 export default Slug
