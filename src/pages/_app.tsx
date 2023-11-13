@@ -16,9 +16,6 @@ storyblokInit({
   accessToken: API_TOKEN_STORYBLOK,
   use: [apiPlugin],
   components,
-  apiOptions: {
-    region: 'en',
-  },
 })
 
 const App = ({ Component, pageProps }: AppProps) => <Component {...pageProps} />
