@@ -7,6 +7,8 @@ import { ISbStoryData } from '@storyblok/react'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import React, { FC } from 'react'
 import StoryblokProvider from '@/components/Storyblok/StoryblokProvider'
+import { LanguageType } from '@/types/language-types'
+import Link from 'next/link'
 
 interface SlugProps {
   story: ISbStoryData | null
@@ -36,7 +38,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   }
 }
 
-export const getStaticProps: GetStaticProps = async ({ params, locale, preview = false }) => {
+export const getStaticProps: GetStaticProps = async ({ params, locale = 'en', preview = false }) => {
   if (params === undefined) {
     // Обработка случая, когда params не определен
     return {
@@ -48,7 +50,7 @@ export const getStaticProps: GetStaticProps = async ({ params, locale, preview =
 
   const apiParams: Params = {
     version: preview ? Version.Draft : Version.Published,
-    language: locale === Language.En ? Language.Default : Language.Ru,
+    language: locale === 'en' ? Language.en : (locale as LanguageType),
     token: preview ? PREVIEW_TOKEN_STORYBLOK : API_TOKEN_STORYBLOK,
   }
 
@@ -72,7 +74,17 @@ const Slug: FC<SlugProps> = ({ story }) => {
     return <h1 className='text-center'>Storyblok error</h1>
   }
 
-  return <StoryblokProvider story={story} />
+  return (
+    <div>
+      <StoryblokProvider story={story} />
+      <Link href='/uluk' locale='ru'>
+        Russian
+      </Link>
+      <Link href='/uluk' locale='en'>
+        English
+      </Link>
+    </div>
+  )
 }
 
 export default Slug

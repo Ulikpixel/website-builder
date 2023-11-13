@@ -1,5 +1,4 @@
 export const Language = {
-  Ru: 'ru',
-  En: 'en',
-  Default: 'default',
+  ru: 'ru',
+  en: 'default'
 } as const

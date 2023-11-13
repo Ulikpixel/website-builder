@@ -4,4 +4,8 @@ module.exports = {
   generateEtags: false,
   reactStrictMode: true,
   swcMinify: true,
+  i18n: {
+    locales: ['en', 'ru'],
+    defaultLocale: 'en',
+  }
 }
