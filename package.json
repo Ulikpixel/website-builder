@@ -26,8 +26,7 @@
     "is-ci": "^3.0.1",
     "next": "^13.4.19",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "storyblok": "^3.25.3"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.7.1",
