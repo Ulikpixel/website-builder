@@ -60,6 +60,7 @@ export const getStaticProps: GetStaticProps = async ({ params, locale, preview =
   return {
     props: {
       story: response.story || null,
+      preview,
     },
     revalidate: 3600,
   }

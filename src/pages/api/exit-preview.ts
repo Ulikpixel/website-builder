@@ -7,7 +7,7 @@ export default async function exit(req: NextApiRequest, res: NextApiResponse) {
   res.setHeader(
     'Set-Cookie',
     cookies.map((cookie) =>
-      cookie.replace('SameSite=Lax', 'SameSite=None')
+      cookie.replace('SameSite=Lax', 'SameSite=None;Secure')
     )
   )
 
