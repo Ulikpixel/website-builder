@@ -8,7 +8,6 @@ import { GetStaticPaths, GetStaticProps } from 'next'
 import React, { FC } from 'react'
 import StoryblokProvider from '@/components/Storyblok/StoryblokProvider'
 import { LanguageType } from '@/types/language-types'
-import Link from 'next/link'
 
 interface SlugProps {
   story: ISbStoryData | null
@@ -74,17 +73,7 @@ const Slug: FC<SlugProps> = ({ story }) => {
     return <h1 className='text-center'>Storyblok error</h1>
   }
 
-  return (
-    <div>
-      <StoryblokProvider story={story} />
-      <Link href='/uluk' locale='ru'>
-        Russian
-      </Link>
-      <Link href='/uluk' locale='en'>
-        English
-      </Link>
-    </div>
-  )
+  return <StoryblokProvider story={story} />
 }
 
 export default Slug
