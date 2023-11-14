@@ -1,7 +1,16 @@
+export interface RichtextStoryblok {
+  type: string;
+  content?: RichtextStoryblok[];
+  marks?: RichtextStoryblok[];
+  attrs?: any;
+  text?: string;
+  [k: string]: any;
+}
+
 export interface ExampleStoryblok {
   title?: string;
-  description?: string;
-  blocks?: any[];
+  description?: RichtextStoryblok;
+  blocks?: (ExampleStoryblok | ExampleBlockStoryblok)[];
   _uid: string;
   component: 'example';
   [k: string]: any;
