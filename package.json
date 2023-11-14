@@ -25,6 +25,7 @@
     "cross-env": "^7.0.3",
     "is-ci": "^3.0.1",
     "next": "^13.4.19",
+    "next-seo": "^6.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "storyblok-rich-text-react-renderer": "^2.9.0"
