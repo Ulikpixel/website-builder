@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`insertEmojis should handle an array of ReactNodes as input 1`] = `
+<div>
+  Hello 
+  <span
+    class="inline-block relative top-px"
+  >
+    <img
+      alt="Smile Icon"
+      class="w-emoji h-emoji"
+      data-nimg="1"
+      decoding="async"
+      height="40"
+      loading="lazy"
+      src="/_next/image?url=%2Fimg.jpg&w=96&q=75"
+      srcset="/_next/image?url=%2Fimg.jpg&w=48&q=75 1x, /_next/image?url=%2Fimg.jpg&w=96&q=75 2x"
+      style="color: transparent;"
+      width="40"
+    />
+  </span>
+  , how are you 
+  <span
+    class="inline-block relative top-px"
+  >
+    <img
+      alt="Hello Icon"
+      class="w-emoji h-emoji"
+      data-nimg="1"
+      decoding="async"
+      height="40"
+      loading="lazy"
+      src="/_next/image?url=%2Fimg.jpg&w=96&q=75"
+      srcset="/_next/image?url=%2Fimg.jpg&w=48&q=75 1x, /_next/image?url=%2Fimg.jpg&w=96&q=75 2x"
+      style="color: transparent;"
+      width="40"
+    />
+  </span>
+  ?
+</div>
+`;
+
+exports[`insertEmojis should handle an empty string as input 1`] = `<div />`;
+
+exports[`insertEmojis should replace emojis in a string with corresponding React components 1`] = `
+<div>
+  Hello 
+  <span
+    class="inline-block relative top-px"
+  >
+    <img
+      alt="Smile Icon"
+      class="w-emoji h-emoji"
+      data-nimg="1"
+      decoding="async"
+      height="40"
+      loading="lazy"
+      src="/_next/image?url=%2Fimg.jpg&w=96&q=75"
+      srcset="/_next/image?url=%2Fimg.jpg&w=48&q=75 1x, /_next/image?url=%2Fimg.jpg&w=96&q=75 2x"
+      style="color: transparent;"
+      width="40"
+    />
+  </span>
+  , how are you 
+  <span
+    class="inline-block relative top-px"
+  >
+    <img
+      alt="Hello Icon"
+      class="w-emoji h-emoji"
+      data-nimg="1"
+      decoding="async"
+      height="40"
+      loading="lazy"
+      src="/_next/image?url=%2Fimg.jpg&w=96&q=75"
+      srcset="/_next/image?url=%2Fimg.jpg&w=48&q=75 1x, /_next/image?url=%2Fimg.jpg&w=96&q=75 2x"
+      style="color: transparent;"
+      width="40"
+    />
+  </span>
+  ?
+</div>
+`;

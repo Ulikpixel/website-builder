@@ -28,6 +28,7 @@
     "next-seo": "^6.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-string-replace": "^1.1.1",
     "storyblok-rich-text-react-renderer": "^2.9.0"
   },
   "devDependencies": {

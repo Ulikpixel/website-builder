@@ -5,6 +5,12 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 module.exports = {
   content: ['./pages/**/*.{js,jsx,ts,tsx}', './src/**/*.{js,jsx,ts,tsx}'],
   theme: {
+    width: {
+      emoji: '0.8em'
+    },
+    height: {
+      emoji: '0.8em'
+    },
     fontSize: {
       'organick-h1-lg': ['4.38rem', { lineHeight: '82px', fontWeight: '800' }],
       'organick-h2-lg': ['3.13rem', { lineHeight: '58px', fontWeight: '800' }],

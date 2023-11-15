@@ -1,4 +1,5 @@
 import { ExampleBlockStoryblok } from '@/types/storyblok-bloks/storyblok-bloks-types'
+import { insertEmojis } from '@/utils/emoji-parser/emoji-parser'
 import React, { FC } from 'react'
 
 interface ExampleBlokProps {
@@ -7,7 +8,7 @@ interface ExampleBlokProps {
 
 const ExampleBlok: FC<ExampleBlokProps> = ({ blok }) => (
   <div>
-    <p>{blok.name}</p>
+    <p>{(blok.name && insertEmojis(blok.name)) || 'no text'}</p>
   </div>
 )
 
