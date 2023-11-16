@@ -1,6 +1,8 @@
 /* eslint-disable import/no-extraneous-dependencies */
 const defaultTheme = require('tailwindcss/defaultTheme')
 
+const getFont = (font) => [font, 'Arial', 'sans-serif']
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./pages/**/*.{js,jsx,ts,tsx}', './src/**/*.{js,jsx,ts,tsx}'],
@@ -12,7 +14,7 @@ module.exports = {
       emoji: '0.8em'
     },
     fontSize: {
-      'organick-h1-lg': ['4.38rem', { lineHeight: '82px', fontWeight: '800' }],
+      'organick-h1-lg': ['4.32rem', { lineHeight: '82px', fontWeight: '800' }],
       'organick-h2-lg': ['3.13rem', { lineHeight: '58px', fontWeight: '800' }],
       'organick-h3-lg': ['2.5rem', { lineHeight: '46px', fontWeight: '800' }],
       'organick-h4-lg': ['2.2rem', { lineHeight: '41px', fontWeight: '800' }],
@@ -43,11 +45,23 @@ module.exports = {
       'organick-white': '#F9F8F8',
       'organick-green-white': '#EFF6F1',
       'organick-dark': '#525C60',
+      'organick-special-green': '#68A47F',
       'default-white': '#FFFFFF',
     },
+    container: {
+      padding: '20px',
+      center: true,
+      screens: {
+        lg: '1440px'
+      },
+    },
     fontFamily: {
-      'roboto': ['Roboto', 'Arial', 'sans-serif'],
-      'open-sans': ['Open Sans', 'Arial', 'sans-serif']
+      'roboto': getFont('Roboto'),
+      'open-sans': getFont('Open Sans'),
+      'yellowtail': getFont('Yellowtail'),
+    },
+    minHeight: {
+      hero: '898px'
     },
     extend: {},
   },

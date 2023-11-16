@@ -3,14 +3,14 @@ import React from 'react'
 import { AppProps } from 'next/app'
 import '@/styles/tailwind.css'
 import { API_TOKEN_STORYBLOK } from '@/config'
-import Example from '@/components/Templates/Example'
-import ExampleBlok from '@/components/Molecules/ExampleBlok'
 // @ts-ignore
 import { apiPlugin, storyblokInit } from '@storyblok/react/rsc'
+import Organick from '@/components/Templates/Organick/Organick'
+import Hero from '@/components/Organisms/Hero/Hero'
 
 const components = {
-  example: Example,
-  'example-block': ExampleBlok,
+  organick: Organick,
+  hero: Hero,
 }
 
 storyblokInit({

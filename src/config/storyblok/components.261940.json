@@ -1,49 +1,50 @@
 {
   "components": [
     {
-      "name": "example",
+      "name": "button",
       "display_name": null,
-      "created_at": "2023-11-10T13:56:52.856Z",
-      "updated_at": "2023-11-14T07:54:44.358Z",
-      "id": 4865730,
+      "created_at": "2023-11-16T13:14:38.709Z",
+      "updated_at": "2023-11-16T13:19:02.660Z",
+      "id": 4894132,
       "schema": {
-        "title": {
+        "text": {
           "type": "text",
-          "pos": 1,
-          "translatable": true
+          "required": true,
+          "translatable": true,
+          "display_name": "содержимое"
         },
-        "description": {
-          "type": "richtext",
-          "pos": 2,
-          "required": false,
-          "translatable": true
+        "variant": {
+          "type": "option",
+          "use_uuid": true,
+          "display_name": "вариант кнопки",
+          "options": [
+            {
+              "_uid": "49965c02-1254-4a93-8ebb-cdcd01ec1387",
+              "name": "синий",
+              "value": "blue-dark"
+            },
+            {
+              "_uid": "6e44b0b1-91fe-4399-9476-775aac8464ed",
+              "value": "white",
+              "name": "белый"
+            },
+            {
+              "_uid": "14b71ded-bfe0-4532-b7a4-62856a0dde0b",
+              "value": "yellow",
+              "name": "желтый"
+            }
+          ],
+          "exclude_empty_option": true
         },
-        "blocks": {
-          "type": "bloks",
-          "pos": 3
-        }
-      },
-      "image": null,
-      "preview_field": null,
-      "is_root": true,
-      "preview_tmpl": null,
-      "is_nestable": false,
-      "all_presets": [],
-      "preset_id": null,
-      "real_name": "example",
-      "component_group_uuid": null,
-      "color": null,
-      "icon": null
-    },
-    {
-      "name": "example-block",
-      "display_name": null,
-      "created_at": "2023-11-10T13:57:17.252Z",
-      "updated_at": "2023-11-10T13:57:22.620Z",
-      "id": 4865731,
-      "schema": {
-        "name": {
-          "type": "text"
+        "icon": {
+          "type": "boolean"
+        },
+        "link": {
+          "type": "multilink",
+          "required": true,
+          "translatable": true,
+          "display_name": "ссылка",
+          "allow_target_blank": true
         }
       },
       "image": null,
@@ -53,9 +54,124 @@
       "is_nestable": true,
       "all_presets": [],
       "preset_id": null,
-      "real_name": "example-block",
+      "real_name": "button",
       "component_group_uuid": null,
-      "color": null,
+      "color": "#2db47d",
+      "icon": null
+    },
+    {
+      "name": "hero",
+      "display_name": "главный экран",
+      "created_at": "2023-11-16T13:11:30.849Z",
+      "updated_at": "2023-11-16T13:20:20.952Z",
+      "id": 4894127,
+      "schema": {
+        "up_title": {
+          "type": "text",
+          "pos": 0,
+          "required": true,
+          "translatable": true,
+          "display_name": "Особый заголовок"
+        },
+        "title": {
+          "type": "text",
+          "pos": 1,
+          "required": true,
+          "translatable": true,
+          "display_name": "заголовок"
+        },
+        "background": {
+          "type": "asset",
+          "required": true,
+          "translatable": true,
+          "display_name": "фон",
+          "filetypes": [
+            "images"
+          ],
+          "allow_external_url": true
+        },
+        "content": {
+          "type": "bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "button"
+          ],
+          "minimum": 1,
+          "maximum": 1,
+          "required": true,
+          "display_name": "кнопка"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "главный экран",
+      "component_group_uuid": null,
+      "color": "#ff6159",
+      "icon": null
+    },
+    {
+      "name": "organick",
+      "display_name": null,
+      "created_at": "2023-11-16T12:57:59.764Z",
+      "updated_at": "2023-11-16T13:20:54.036Z",
+      "id": 4893968,
+      "schema": {
+        "title": {
+          "type": "text",
+          "pos": 0,
+          "display_name": "Заголовок",
+          "required": true,
+          "translatable": true,
+          "tooltip": true,
+          "description": "Title для SEO - оптимизаций"
+        },
+        "description": {
+          "type": "text",
+          "pos": 1,
+          "display_name": "Описание",
+          "required": true,
+          "translatable": true,
+          "description": "Поле Description для SEO - оптимизаций",
+          "tooltip": true
+        },
+        "tab-da1d45fb-dd40-495a-a639-4528c1099a9a": {
+          "display_name": "seo",
+          "keys": [
+            "title",
+            "description"
+          ],
+          "pos": 2,
+          "type": "tab"
+        },
+        "content": {
+          "type": "bloks",
+          "display_name": "Контент",
+          "required": true,
+          "minimum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "menu",
+            "hero"
+          ]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "organick",
+      "component_group_uuid": null,
+      "color": "#fbce41",
       "icon": null
     }
   ]
