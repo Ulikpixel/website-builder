@@ -1,9 +1,20 @@
-export interface RichtextStoryblok {
-  type: string;
-  content?: RichtextStoryblok[];
-  marks?: RichtextStoryblok[];
-  attrs?: any;
-  text?: string;
+export interface AssetStoryblok {
+  alt?: string;
+  copyright?: string;
+  id: number;
+  filename: string;
+  name: string;
+  title?: string;
+  focus?: string;
+  [k: string]: any;
+}
+
+export interface AdvertisingCardStoryblok {
+  title: string;
+  up_title: string;
+  background: AssetStoryblok;
+  _uid: string;
+  component: 'advertising-card';
   [k: string]: any;
 }
 
@@ -67,14 +78,13 @@ export interface ButtonStoryblok {
   [k: string]: any;
 }
 
-export interface AssetStoryblok {
-  alt?: string;
-  copyright?: string;
-  id: number;
-  filename: string;
-  name: string;
-  title?: string;
-  focus?: string;
+export interface ContainerStoryblok {
+  variants: 'small' | 'medium' | 'large' | 'xlarge';
+  background?: 'blue-dark' | 'green' | 'dark' | 'grey';
+  grid?: '2' | '3' | '4';
+  content: (AdvertisingCardStoryblok | ButtonStoryblok | ContainerStoryblok | HeroStoryblok | OrganickStoryblok)[];
+  _uid: string;
+  component: 'container';
   [k: string]: any;
 }
 
@@ -91,7 +101,7 @@ export interface HeroStoryblok {
 export interface OrganickStoryblok {
   title: string;
   description: string;
-  content: (HeroStoryblok)[];
+  content: (HeroStoryblok | ContainerStoryblok)[];
   _uid: string;
   component: 'organick';
   [k: string]: any;

@@ -7,10 +7,14 @@ import { API_TOKEN_STORYBLOK } from '@/config'
 import { apiPlugin, storyblokInit } from '@storyblok/react/rsc'
 import Organick from '@/components/Templates/Organick/Organick'
 import Hero from '@/components/Organisms/Hero/Hero'
+import Container from '@/components/Molecules/Container/Container'
+import AdvertisingCard from '@/components/Molecules/AdvertisingCard/AdvertisingCard'
 
 const components = {
   organick: Organick,
   hero: Hero,
+  container: Container,
+  'advertising-card': AdvertisingCard,
 }
 
 storyblokInit({

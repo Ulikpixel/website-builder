@@ -1,6 +1,49 @@
 {
   "components": [
     {
+      "name": "advertising-card",
+      "display_name": null,
+      "created_at": "2023-11-17T10:55:24.193Z",
+      "updated_at": "2023-11-17T10:58:20.039Z",
+      "id": 4898644,
+      "schema": {
+        "title": {
+          "type": "text",
+          "required": true,
+          "translatable": true,
+          "display_name": "Заголовок",
+          "max_length": 50
+        },
+        "up_title": {
+          "type": "text",
+          "display_name": "верхний текст",
+          "required": true,
+          "translatable": true,
+          "max_length": 30
+        },
+        "background": {
+          "type": "asset",
+          "required": true,
+          "display_name": "Фон карточки",
+          "filetypes": [
+            "images"
+          ],
+          "allow_external_url": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "advertising-card",
+      "component_group_uuid": null,
+      "color": "#2db47d",
+      "icon": null
+    },
+    {
       "name": "button",
       "display_name": null,
       "created_at": "2023-11-16T13:14:38.709Z",
@@ -57,6 +100,112 @@
       "real_name": "button",
       "component_group_uuid": null,
       "color": "#2db47d",
+      "icon": null
+    },
+    {
+      "name": "container",
+      "display_name": "контейнер для контента",
+      "created_at": "2023-11-17T10:59:16.199Z",
+      "updated_at": "2023-11-17T11:05:45.557Z",
+      "id": 4898669,
+      "schema": {
+        "variants": {
+          "type": "option",
+          "use_uuid": true,
+          "display_name": "отступы между",
+          "required": true,
+          "options": [
+            {
+              "_uid": "027e8b9e-6986-4203-b018-ee2c4b9d7da4",
+              "name": "small",
+              "value": "small"
+            },
+            {
+              "_uid": "bfd661f9-d8fc-4247-b3cb-894f8ab3c966",
+              "value": "medium",
+              "name": "medium"
+            },
+            {
+              "_uid": "0c31b4ac-1f66-4c62-8294-4e386f257695",
+              "value": "large",
+              "name": "large"
+            },
+            {
+              "_uid": "c6de6264-fe86-4854-94ab-5ad250881921",
+              "value": "xlarge",
+              "name": "xlarge"
+            }
+          ],
+          "exclude_empty_option": true
+        },
+        "background": {
+          "type": "option",
+          "use_uuid": true,
+          "options": [
+            {
+              "_uid": "60c7f084-b008-4b8d-b787-5ee5ebe1100c",
+              "name": "темно синий",
+              "value": "blue-dark"
+            },
+            {
+              "_uid": "960dd70b-fd7e-471d-8e24-cf53556a5dea",
+              "value": "green",
+              "name": "зеленый"
+            },
+            {
+              "_uid": "47d3c2ce-f8f5-4785-bd64-e707e903e8bc",
+              "value": "dark",
+              "name": "темный"
+            },
+            {
+              "_uid": "969bcc2f-2f30-4a2d-865f-3d6d11d55101",
+              "value": "grey",
+              "name": "серый"
+            }
+          ],
+          "exclude_empty_option": true
+        },
+        "grid": {
+          "type": "option",
+          "use_uuid": true,
+          "required": false,
+          "exclude_empty_option": true,
+          "options": [
+            {
+              "_uid": "35b8afee-9782-4f9c-acf6-0edd8e5a85ed",
+              "name": "2 колонки",
+              "value": "2"
+            },
+            {
+              "_uid": "b2dbbb83-c7dd-499e-9abb-2d31b73f168d",
+              "value": "3",
+              "name": "3 колонки"
+            },
+            {
+              "_uid": "7f3c41e8-f912-4d0f-8563-7dfd1b94816b",
+              "value": "4",
+              "name": "4 колонки"
+            }
+          ],
+          "display_name": "сетка"
+        },
+        "content": {
+          "type": "bloks",
+          "display_name": "контент контейнера",
+          "required": true,
+          "minimum": 1
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "контейнер для контента",
+      "component_group_uuid": null,
+      "color": "#ff6159",
       "icon": null
     },
     {
@@ -119,7 +268,7 @@
       "name": "organick",
       "display_name": null,
       "created_at": "2023-11-16T12:57:59.764Z",
-      "updated_at": "2023-11-16T13:20:54.036Z",
+      "updated_at": "2023-11-17T11:04:36.160Z",
       "id": 4893968,
       "schema": {
         "title": {
@@ -158,7 +307,8 @@
           "restrict_components": true,
           "component_whitelist": [
             "menu",
-            "hero"
+            "hero",
+            "container"
           ]
         }
       },
