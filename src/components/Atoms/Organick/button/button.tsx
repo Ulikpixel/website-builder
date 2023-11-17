@@ -1,14 +1,16 @@
 import React, { ReactNode, FC } from 'react'
 import clsx from 'clsx'
+import Link, { LinkProps } from 'next/link'
 import Image from 'next/image'
 import arrowIcon from './icons/arrow.svg'
 
 export type VariantsType = 'blue-dark' | 'white' | 'yellow'
 
-export interface ButtonProps {
+export interface ButtonProps extends LinkProps {
   children: ReactNode
   variant?: VariantsType
   icon?: boolean
+  target?: string
 }
 
 export const variants = {
@@ -26,20 +28,22 @@ export const variants = {
   `,
 }
 
-const Button: FC<ButtonProps> = ({ children, variant = 'blue-dark', icon }) => (
-  <button
-    type='button'
+const Button: FC<ButtonProps> = ({ children, variant = 'blue-dark', icon, ...props }) => (
+  /* eslint-disable react/jsx-props-no-spreading */
+  <Link
+    {...props}
+    passHref
     className={clsx(
       `
-        rounded-xl font-roboto font-bold transition-colors flex gap-2 items-center
-        px-6 py-1 text-xl sm:pt-1 sm:pb-1.5 lg:px-10 lg:pt-2.5 lg:pb-3
+        rounded-xl font-roboto font-bold transition-colors gap-2 items-center
+        px-6 py-1 text-xl sm:pt-1 sm:pb-1.5 lg:px-10 lg:pt-2.5 lg:pb-3 inline-flex
       `,
       variants[variant],
     )}
   >
     {children}
     {icon && <Image src={arrowIcon} alt='arrow icon' className='w-4 h-4 relative top-[0.3px]' />}
-  </button>
+  </Link>
 )
 
 export default Button

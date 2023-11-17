@@ -5,7 +5,7 @@ import Button from '@/components/Atoms/Organick/button/button'
 const Home: NextPage = () => (
   <div className='flex flex-col gap-4'>
     <div>
-      <Button icon variant='yellow'>
+      <Button icon href='/' variant='yellow'>
         Default Button
       </Button>
     </div>

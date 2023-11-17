@@ -5,7 +5,11 @@ import Button, { variants, VariantsType } from './button'
 
 const validVariant = (variant: VariantsType | undefined = 'blue-dark'): void => {
   it(`renders with default "${variant}" variant and children`, () => {
-    const { getByText } = render(<Button variant={variant}>Click me</Button>)
+    const { getByText } = render(
+      <Button href='/' variant={variant}>
+        Click me
+      </Button>,
+    )
     const button = getByText('Click me')
     const imageElement = screen.queryByRole('img')
 
@@ -22,7 +26,11 @@ describe('Button component', () => {
   validVariant('yellow')
 
   it('renders with icon when icon prop is true', () => {
-    const { getByText } = render(<Button icon>Click me</Button>)
+    const { getByText } = render(
+      <Button href='/' icon>
+        Click me
+      </Button>,
+    )
     const imageElement = screen.getByRole('img')
     const button = getByText('Click me')
 

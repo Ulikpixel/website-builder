@@ -61,7 +61,9 @@ module.exports = {
       'yellowtail': getFont('Yellowtail'),
     },
     minHeight: {
-      hero: '898px'
+      'hero': '500px',
+      'hero-sm': '600px',
+      'hero-xl': '898px'
     },
     extend: {},
   },
