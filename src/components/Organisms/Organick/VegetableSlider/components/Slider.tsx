@@ -1,6 +1,6 @@
 import { VegetableSliderStoryblok } from '@/types/storyblok-bloks/storyblok-bloks-types'
 import React, { FC, useRef } from 'react'
-import Vegetable from '@/components/Molecules/Vegetable/Vegetable'
+import Vegetable from '@/components/Molecules/Organick/Vegetable/Vegetable'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination } from 'swiper/modules'
 import ArrowImage from './ArrowImage'

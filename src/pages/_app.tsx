@@ -6,11 +6,11 @@ import { API_TOKEN_STORYBLOK } from '@/config'
 // @ts-ignore
 import { apiPlugin, storyblokInit } from '@storyblok/react/rsc'
 import Organick from '@/components/Templates/Organick/Organick'
-import Hero from '@/components/Organisms/Hero/Hero'
+import Hero from '@/components/Organisms/Organick/Hero/Hero'
 import Container from '@/components/Molecules/Container/Container'
-import AdvertisingCard from '@/components/Molecules/AdvertisingCard/AdvertisingCard'
-import VegetableSlider from '@/components/Organisms/VegetableSlider/VegetableSlider'
-import Vegetable from '@/components/Molecules/Vegetable/Vegetable'
+import AdvertisingCard from '@/components/Molecules/Organick/AdvertisingCard/AdvertisingCard'
+import VegetableSlider from '@/components/Organisms/Organick/VegetableSlider/VegetableSlider'
+import Vegetable from '@/components/Molecules/Organick/Vegetable/Vegetable'
 
 const components = {
   organick: Organick,
