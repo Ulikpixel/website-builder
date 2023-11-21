@@ -27,7 +27,7 @@ const breakpoints = {
   },
 }
 
-const SliderWithArrows: FC<SliderWithArrowsProps> = ({ blok }) => {
+const Slider: FC<SliderWithArrowsProps> = ({ blok }) => {
   const swiperRef = useRef<any>()
 
   const slidePrev = () => swiperRef.current?.slidePrev()
@@ -61,4 +61,4 @@ const SliderWithArrows: FC<SliderWithArrowsProps> = ({ blok }) => {
   )
 }
 
-export default SliderWithArrows
+export default Slider

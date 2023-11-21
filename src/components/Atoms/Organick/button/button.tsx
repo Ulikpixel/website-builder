@@ -2,6 +2,7 @@ import React, { ReactNode, FC } from 'react'
 import clsx from 'clsx'
 import Link, { LinkProps } from 'next/link'
 import Image from 'next/image'
+import { ButtonStoryblok } from '@/types/storyblok-bloks/storyblok-bloks-types'
 import arrowIcon from './icons/arrow.svg'
 
 export type VariantsType = 'blue-dark' | 'white' | 'yellow'
@@ -27,6 +28,13 @@ export const variants = {
     hover:bg-default-white
   `,
 }
+
+export const parseButtonProps = (data: ButtonStoryblok) => ({
+  variant: data.variant,
+  icon: data.icon,
+  href: data.link.url || '/',
+  target: data.link.target,
+})
 
 const Button: FC<ButtonProps> = ({ children, variant = 'blue-dark', icon, ...props }) => (
   /* eslint-disable react/jsx-props-no-spreading */
