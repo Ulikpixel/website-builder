@@ -13,7 +13,7 @@ const Hero: FC<HeroProps> = ({ blok: { content, ...blok } }) => (
   >
     <div className='container'>
       <div className='text-center xl:text-left xl:max-w-[540px]'>
-        <p className='font-yellowtail text-organick-special-green text-[30px] lg:text-[36px] mb-2'>{blok.up_title}</p>
+        <p className='font-yellowtail text-organick-special-green text-3xl lg:text-4xl mb-2'>{blok.up_title}</p>
         <h1 className='mb-6'>{blok.title}</h1>
         {/* eslint-disable react/jsx-props-no-spreading */}
         <Button {...parseButtonProps(content[0])}>{content[0].text}</Button>

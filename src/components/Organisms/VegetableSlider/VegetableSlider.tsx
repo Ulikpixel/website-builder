@@ -21,7 +21,7 @@ const VegetableSlider: FC<VegetableSliderProps> = ({ blok: { buttons, ...blok } 
     <div className='container'>
       <div className='flex flex-col text-center mb-9 sm:text-left sm:justify-between sm:flex-row sm:items-end md:mb-12'>
         <div className='mb-4 sm:mb-0'>
-          <p className='text-organick-special-green font-yellowtail text-[36px] mb-2'>{blok.up_text}</p>
+          <p className='text-organick-special-green font-yellowtail text-4xl mb-2'>{blok.up_text}</p>
           <h2 className='text-default-white'>{blok.title}</h2>
         </div>
         <div>

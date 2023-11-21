@@ -11,13 +11,13 @@ interface VegetableProps {
 const Vegetable: FC<VegetableProps> = ({ blok }) => (
   <div className='h-vegetable-card-small sm:h-vegetable-card-big sm:w-vegetable-card-big bg-default-white rounded-2xl px-4 pt-4 md:px-7 md:pt-7'>
     <div className='bg-organick-blue-dark inline-block py-1.5 px-3 rounded-xl mb-5'>
-      <p className='text-default-white text-[15px]'>{blok.type}</p>
+      <p className='text-default-white text-sm'>{blok.type}</p>
     </div>
     <div className='w-full h-[260px] overflow-hidden mb-5'>
       <img src={blok.cover.filename} alt={`Product: ${blok.cover.name}`} />
     </div>
     <div>
-      <p className='text-organick-blue-dark text-[20px] font-semibold mb-3'>{blok.name}</p>
+      <p className='text-organick-blue-dark text-xl font-semibold mb-3'>{blok.name}</p>
       <div className='w-full h-px bg-organick-line-grey mb-1.5' />
       <div className='flex items-center justify-between'>
         <div className='flex items-center gap-2'>
