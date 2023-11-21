@@ -3,6 +3,7 @@ import clsx from 'clsx'
 import Link, { LinkProps } from 'next/link'
 import Image from 'next/image'
 import { ButtonStoryblok } from '@/types/storyblok-bloks/storyblok-bloks-types'
+import { insertEmojis } from '@/utils/emoji-parser/emoji-parser'
 import arrowIcon from './icons/arrow.svg'
 
 export type VariantsType = 'blue-dark' | 'white' | 'yellow'
@@ -49,7 +50,7 @@ const Button: FC<ButtonProps> = ({ children, variant = 'blue-dark', icon, ...pro
       variants[variant],
     )}
   >
-    {children}
+    {insertEmojis(children as ReactNode[])}
     {icon && <Image src={arrowIcon} alt='arrow icon' className='w-4 h-4 relative top-[0.3px]' />}
   </Link>
 )

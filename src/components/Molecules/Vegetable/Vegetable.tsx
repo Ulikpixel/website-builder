@@ -1,6 +1,7 @@
 import { VegetableStoryblok } from '@/types/storyblok-bloks/storyblok-bloks-types'
 import React, { FC } from 'react'
 import Image from 'next/image'
+import { insertEmojis } from '@/utils/emoji-parser/emoji-parser'
 import starYellow from './icons/star-yellow.svg'
 import starDark from './icons/star-dark.svg'
 
@@ -17,7 +18,7 @@ const Vegetable: FC<VegetableProps> = ({ blok }) => (
       <img src={blok.cover.filename} alt={`Product: ${blok.cover.name}`} />
     </div>
     <div>
-      <p className='text-organick-blue-dark text-xl font-semibold mb-3'>{blok.name}</p>
+      <p className='text-organick-blue-dark text-xl font-semibold mb-3'>{insertEmojis(blok.name)}</p>
       <div className='w-full h-px bg-organick-line-grey mb-1.5' />
       <div className='flex items-center justify-between'>
         <div className='flex items-center gap-2'>

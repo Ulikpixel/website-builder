@@ -1,4 +1,5 @@
 import { AdvertisingCardStoryblok } from '@/types/storyblok-bloks/storyblok-bloks-types'
+import { insertEmojis } from '@/utils/emoji-parser/emoji-parser'
 import React, { FC } from 'react'
 
 interface AdvertisingCardProps {
@@ -14,8 +15,10 @@ const AdvertisingCard: FC<AdvertisingCardProps> = ({ blok }) => (
     style={{ backgroundImage: `url(${blok.background.filename})` }}
   >
     <div className='lg:max-w-[280px]'>
-      <p className='font-yellowtail text-organick-special-green mb-4 text-3xl lg:text-4xl lg:mb-1'>{blok.up_title}</p>
-      <h3>{blok.title}</h3>
+      <p className='font-yellowtail text-organick-special-green mb-4 text-3xl lg:text-4xl lg:mb-1'>
+        {insertEmojis(blok.up_title)}
+      </p>
+      <h3>{insertEmojis(blok.title)}</h3>
     </div>
   </div>
 )

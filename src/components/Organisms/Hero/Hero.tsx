@@ -1,5 +1,6 @@
 import Button, { parseButtonProps } from '@/components/Atoms/Organick/button/button'
 import { HeroStoryblok } from '@/types/storyblok-bloks/storyblok-bloks-types'
+import { insertEmojis } from '@/utils/emoji-parser/emoji-parser'
 import React, { FC } from 'react'
 
 interface HeroProps {
@@ -13,8 +14,10 @@ const Hero: FC<HeroProps> = ({ blok: { content, ...blok } }) => (
   >
     <div className='container'>
       <div className='text-center xl:text-left xl:max-w-[540px]'>
-        <p className='font-yellowtail text-organick-special-green text-3xl lg:text-4xl mb-2'>{blok.up_title}</p>
-        <h1 className='mb-6'>{blok.title}</h1>
+        <p className='font-yellowtail text-organick-special-green text-3xl lg:text-4xl mb-2'>
+          {insertEmojis(blok.up_title)}
+        </p>
+        <h1 className='mb-6'>{insertEmojis(blok.title)}</h1>
         {/* eslint-disable react/jsx-props-no-spreading */}
         <Button {...parseButtonProps(content[0])}>{content[0].text}</Button>
       </div>

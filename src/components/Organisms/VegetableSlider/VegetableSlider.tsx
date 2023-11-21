@@ -4,6 +4,7 @@ import { VegetableSliderStoryblok } from '@/types/storyblok-bloks/storyblok-blok
 import { storyblokEditable } from '@storyblok/react'
 import clsx from 'clsx'
 import React, { FC } from 'react'
+import { insertEmojis } from '@/utils/emoji-parser/emoji-parser'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import Slider from './components/Slider'
@@ -21,8 +22,8 @@ const VegetableSlider: FC<VegetableSliderProps> = ({ blok: { buttons, ...blok } 
     <div className='container'>
       <div className='flex flex-col text-center mb-9 sm:text-left sm:justify-between sm:flex-row sm:items-end md:mb-12'>
         <div className='mb-4 sm:mb-0'>
-          <p className='text-organick-special-green font-yellowtail text-4xl mb-2'>{blok.up_text}</p>
-          <h2 className='text-default-white'>{blok.title}</h2>
+          <p className='text-organick-special-green font-yellowtail text-4xl mb-2'>{insertEmojis(blok.up_text)}</p>
+          <h2 className='text-default-white'>{insertEmojis(blok.title)}</h2>
         </div>
         <div>
           <Button {...parseButtonProps(buttons[0])}>{buttons[0].text}</Button>
