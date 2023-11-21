@@ -2,7 +2,8 @@ import { ContainerStoryblok } from '@/types/storyblok-bloks/storyblok-bloks-type
 import { StoryblokComponent, storyblokEditable } from '@storyblok/react'
 import clsx from 'clsx'
 import React, { FC } from 'react'
-import { backgrounds, grids, variants } from './Container.constants'
+import { backgrounds } from '@/config/backgrounds'
+import { grids, variants } from './Container.constants'
 
 interface ContainerProps {
   blok: ContainerStoryblok

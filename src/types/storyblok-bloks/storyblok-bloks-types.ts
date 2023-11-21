@@ -82,7 +82,15 @@ export interface ContainerStoryblok {
   variants: 'small' | 'medium' | 'large' | 'xlarge';
   background?: 'blue-dark' | 'green' | 'dark' | 'grey';
   grid?: '2' | '3' | '4';
-  content: (AdvertisingCardStoryblok | ButtonStoryblok | ContainerStoryblok | HeroStoryblok | OrganickStoryblok)[];
+  content: (
+    | AdvertisingCardStoryblok
+    | ButtonStoryblok
+    | ContainerStoryblok
+    | HeroStoryblok
+    | OrganickStoryblok
+    | VegetableStoryblok
+    | VegetableSliderStoryblok
+  )[];
   _uid: string;
   component: 'container';
   [k: string]: any;
@@ -101,8 +109,31 @@ export interface HeroStoryblok {
 export interface OrganickStoryblok {
   title: string;
   description: string;
-  content: (HeroStoryblok | ContainerStoryblok)[];
+  content: (HeroStoryblok | ContainerStoryblok | VegetableSliderStoryblok)[];
   _uid: string;
   component: 'organick';
+  [k: string]: any;
+}
+
+export interface VegetableStoryblok {
+  name: string;
+  cover: AssetStoryblok;
+  type: 'vegetable' | 'fruits';
+  grade: '1' | '2' | '3' | '4' | '5';
+  price: string;
+  discount?: string;
+  _uid: string;
+  component: 'vegetable';
+  [k: string]: any;
+}
+
+export interface VegetableSliderStoryblok {
+  backgrounds?: 'blue-dark' | 'green' | 'dark' | 'grey';
+  up_text: string;
+  title: string;
+  content: VegetableStoryblok[];
+  buttons: ButtonStoryblok[];
+  _uid: string;
+  component: 'vegetable-slider';
   [k: string]: any;
 }
