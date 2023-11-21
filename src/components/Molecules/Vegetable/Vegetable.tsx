@@ -1,13 +1,14 @@
 import { VegetableStoryblok } from '@/types/storyblok-bloks/storyblok-bloks-types'
 import React, { FC } from 'react'
-import Image from 'next/image'
 import { insertEmojis } from '@/utils/emoji-parser/emoji-parser'
-import starYellow from './icons/star-yellow.svg'
-import starDark from './icons/star-dark.svg'
+import StarIcon from './icons/Star'
 
 interface VegetableProps {
   blok: VegetableStoryblok
 }
+
+const starYellow = '#FFA858'
+const starGrey = '#B8B8B8'
 
 const Vegetable: FC<VegetableProps> = ({ blok }) => (
   <div className='h-vegetable-card-small sm:h-vegetable-card-big sm:w-vegetable-card-big bg-default-white rounded-2xl px-4 pt-4 md:px-7 md:pt-7'>
@@ -29,7 +30,7 @@ const Vegetable: FC<VegetableProps> = ({ blok }) => (
                 : 'text-organick-blue-dark text-lg font-bold'
             }
           >
-            {blok.price}
+            ${blok.price}
           </p>
           {blok.discount && (
             <p className='text-organick-blue-dark text-lg font-bold'>${Number(blok.price) - Number(blok.discount)}</p>
@@ -39,7 +40,7 @@ const Vegetable: FC<VegetableProps> = ({ blok }) => (
           {Array(5)
             .fill(Math.random())
             .map((key, idx) => (
-              <Image src={idx + 1 <= Number(blok.grade) ? starYellow : starDark} alt={`star-${idx + 1}`} key={key} />
+              <StarIcon key={key} pathFill={idx + 1 <= Number(blok.grade) ? starYellow : starGrey} />
             ))}
         </div>
       </div>
