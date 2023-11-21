@@ -1,9 +1,15 @@
 import React from 'react'
 import { NextPage } from 'next'
 import Button from '@/components/Atoms/Organick/button/button'
+import { insertEmojis } from '@/utils/emoji-parser/emoji-parser'
 
 const Home: NextPage = () => (
   <div className='flex flex-col gap-4'>
+    <ul>
+      <li>{insertEmojis('heart !heart')}</li>
+      <li>{insertEmojis('cheeky: !cheeky')}</li>
+      <li>{insertEmojis('love: !love')}</li>
+    </ul>
     <div>
       <Button icon href='/' variant='yellow'>
         Default Button

@@ -3,18 +3,20 @@ import Image from 'next/image'
 import reactStringReplace from 'react-string-replace'
 
 // Импорт SVG иконок из файлов
-import HelloIcon from './icons/hello.svg'
-import SmileIcon from './icons/smile.svg'
+import LoveIcon from './icons/love.svg'
+import CheekyIcon from './icons/cheeky.svg'
+import HeartIcon from './icons/heart.svg'
 
 // Определение типа для карты эмодзи
 type EmojiMap = { [key: string]: React.ReactNode }
 
 export type InsertEmojisValue = string | ReactNode[]
 
-// Статический объект с эмодзи в виде компонентов Image
+// Статический объект с эмодзи в виде компонентов Image (https://www.reshot.com/free-svg-icons/emoji/)
 const staticEmojiMap: EmojiMap = {
-  hello: <Image src={HelloIcon} alt='Hello Icon' className='w-emoji h-emoji' />,
-  smile: <Image src={SmileIcon} alt='Smile Icon' className='w-emoji h-emoji' />,
+  heart: <Image src={HeartIcon} alt='heart Icon' className='w-emoji h-emoji' />,
+  cheeky: <Image src={CheekyIcon} alt='cheeky Icon' className='w-emoji h-emoji' />,
+  love: <Image src={LoveIcon} alt='love Icon' className='w-emoji h-emoji' />,
   // Добавьте другие эмодзи по необходимости
 }
 
@@ -33,7 +35,7 @@ export function insertEmojis(value: InsertEmojisValue): React.ReactNode {
 
     // Возвращение React-элемента с смайликом и уникальным ключом
     return (
-      <span key={`${i}-${Math.random()}`} className='inline-block relative top-px'>
+      <span key={`${i}-${Math.random()}`} className='inline-block relative top-1'>
         {staticEmojiMap[keyword]}
       </span>
     )

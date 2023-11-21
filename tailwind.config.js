@@ -63,7 +63,7 @@ module.exports = {
         'hero-xl': '898px'
       },
       width: {
-        emoji: '0.8em',
+        emoji: '1.1em',
         'vegetable-card-big': '335px',
       },
       maxWidth: {
@@ -73,7 +73,7 @@ module.exports = {
         'slider-vegetable': '310px',
       },
       height: {
-        emoji: '0.8em',
+        emoji: '1.1em',
         'vegetable-card-big': '483px',
         'vegetable-card-small': '423px',
       },
