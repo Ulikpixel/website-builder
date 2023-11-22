@@ -76,7 +76,11 @@ const Slug: FC<SlugProps> = ({ story, links, slug }) => {
   const contextValue = useMemo<SlugContextProps>(() => ({ links: linksParser(links), slug }), [links])
 
   if (story === null) {
-    return <h1 className='text-center'>Storyblok error</h1>
+    return (
+      <div className='w-full h-screen flex items-center justify-center'>
+        <h3 className='text-center'>Ошибка</h3>
+      </div>
+    )
   }
 
   return (
