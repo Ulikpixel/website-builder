@@ -5,4 +5,5 @@ export const backgrounds: { [key in NonNullable<ContainerStoryblok['background']
   green: 'bg-organick-green',
   dark: 'bg-organick-dark',
   grey: 'bg-organick-grey',
+  'green-opacity': 'bg-green-opacity'
 }

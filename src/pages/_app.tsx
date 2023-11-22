@@ -11,6 +11,7 @@ import Container from '@/components/Molecules/Container/Container'
 import AdvertisingCard from '@/components/Molecules/Organick/AdvertisingCard/AdvertisingCard'
 import VegetableSlider from '@/components/Organisms/Organick/VegetableSlider/VegetableSlider'
 import Vegetable from '@/components/Molecules/Organick/Vegetable/Vegetable'
+import Product from '@/components/Molecules/Organick/Product/Product'
 
 const components = {
   organick: Organick,
@@ -19,6 +20,7 @@ const components = {
   'advertising-card': AdvertisingCard,
   'vegetable-slider': VegetableSlider,
   vegetable: Vegetable,
+  product: Product,
 }
 
 storyblokInit({

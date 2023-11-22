@@ -32,7 +32,8 @@ module.exports = {
         'organick-line-grey': '#DEDDDD',
         'default-white': '#FFFFFF',
         'organick-price-grey': '#B8B8B8',
-        'grey-menu': '#f2f0f0'
+        'grey-menu': '#f2f0f0',
+        'green-opacity': '#F1F8F4'
       },
       fontSize: {
         'organick-h1-lg': ['4.32rem', { lineHeight: '82px', fontWeight: '800' }],
@@ -72,12 +73,15 @@ module.exports = {
         'slider-vegetable-md': '690px',
         'slider-vegetable-sm': '335px',
         'slider-vegetable': '310px',
+        product: '612px'
       },
       height: {
         emoji: '1.1em',
         'vegetable-card-big': '483px',
         'vegetable-card-small': '423px',
-        logo: '53px'
+        logo: '53px',
+        'product-big': '400px',
+        'product-small': '300px'
       },
       zIndex: {
         full: '999'

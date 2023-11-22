@@ -9,16 +9,26 @@ interface ContainerProps {
   blok: ContainerStoryblok
 }
 
+const isProduct = (data: ContainerStoryblok['content']): boolean =>
+  Object.values(data).some((item) => item.component === 'product')
+
 const Container: FC<ContainerProps> = ({ blok }) => (
   /* eslint-disable react/jsx-props-no-spreading */
   <section
     {...storyblokEditable(blok)}
     className={clsx('py-20 lg:py-40', blok.background ? backgrounds[blok.background] : 'bg-default-white')}
   >
-    <div className={clsx('container grid', variants[blok.variants], blok.grid ? grids[blok.grid] : 'grid-cols-1')}>
-      {blok.content.map((nestedBlok) => (
+    <div
+      className={clsx(
+        'grid',
+        variants[blok.variants],
+        blok.grid ? grids[blok.grid] : 'grid-cols-1',
+        isProduct(blok.content) ? '' : 'container',
+      )}
+    >
+      {blok.content.map((nestedBlok, idx) => (
         // eslint-disable-next-line
-        <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
+        <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} idx={idx} />
       ))}
     </div>
   </section>

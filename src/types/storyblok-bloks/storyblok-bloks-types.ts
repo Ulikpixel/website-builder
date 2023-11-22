@@ -80,17 +80,9 @@ export interface ButtonStoryblok {
 
 export interface ContainerStoryblok {
   variants: 'small' | 'medium' | 'large' | 'xlarge';
-  background?: 'blue-dark' | 'green' | 'dark' | 'grey';
+  background?: 'blue-dark' | 'green' | 'dark' | 'grey' | 'green-opacity';
   grid?: '2' | '3' | '4';
-  content: (
-    | AdvertisingCardStoryblok
-    | ButtonStoryblok
-    | ContainerStoryblok
-    | HeroStoryblok
-    | OrganickStoryblok
-    | VegetableStoryblok
-    | VegetableSliderStoryblok
-  )[];
+  content: (AdvertisingCardStoryblok | ProductStoryblok | VegetableStoryblok)[];
   _uid: string;
   component: 'container';
   [k: string]: any;
@@ -112,6 +104,14 @@ export interface OrganickStoryblok {
   content: (HeroStoryblok | ContainerStoryblok | VegetableSliderStoryblok)[];
   _uid: string;
   component: 'organick';
+  [k: string]: any;
+}
+
+export interface ProductStoryblok {
+  title: string;
+  cover?: AssetStoryblok;
+  _uid: string;
+  component: 'product';
   [k: string]: any;
 }
 
