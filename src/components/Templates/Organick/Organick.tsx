@@ -1,3 +1,4 @@
+import Footer from '@/components/Organisms/Organick/Footer/Footer'
 import Header from '@/components/Organisms/Organick/Header/Header'
 import { OrganickStoryblok } from '@/types/storyblok-bloks/storyblok-bloks-types'
 import { InfoSlugListResponse } from '@/types/storyblok-types'
@@ -13,14 +14,15 @@ interface OrganickProps {
 const Organick: FC<OrganickProps> = ({ blok }) => (
   /* eslint-disable react/jsx-props-no-spreading */
   <>
+    <NextSeo title={blok.title} description={blok.description} />
     <Header />
     <main {...storyblokEditable(blok)}>
-      <NextSeo title={blok.title} description={blok.description} />
       {blok.content.map((nestedBlok) => (
         // eslint-disable-next-line
         <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
       ))}
     </main>
+    <Footer />
   </>
 )
 

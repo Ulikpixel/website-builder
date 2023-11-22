@@ -3,8 +3,8 @@ import Image from 'next/image'
 import Burger from '@/components/Atoms/Burger/Burger'
 import Popup from '@/components/Atoms/Popup/Popup'
 import { SlugContext } from '@/config/slugContext'
+import logoIcon from '@/static/icons/logo.svg'
 import Menu from './components/Menu'
-import logoIcon from './icons/logo.svg'
 
 const Header: FC = () => {
   const [isMenu, setIsMenu] = useState<boolean>(false)
