@@ -1,4 +1,5 @@
 import { LanguageType } from '@/types/language-types'
+import { InfoSlugListResponse } from '@/types/storyblok-types'
 import { VersionType } from '@/types/verstion-types'
 
 export interface Params {
@@ -35,3 +36,8 @@ export const apiGet = async <T>(options: ApiGetArguments): Promise<T> => {
     throw Error(err as string)
   }
 }
+
+export const getLinksStoryblok = async () => apiGet<InfoSlugListResponse>({
+  url: 'links/',
+  params: { token: process.env.PREVIEW_SECRET_TOKEN },
+})

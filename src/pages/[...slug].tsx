@@ -1,34 +1,29 @@
 import { Language } from '@/config/language'
 import { Version } from '@/config/version'
-import { InfoSlugListResponse } from '@/types/storyblok-types'
+import { InfoSlug, InfoSlugListResponse } from '@/types/storyblok-types'
 import { API_TOKEN_STORYBLOK, PREVIEW_TOKEN_STORYBLOK } from '@/config'
-import { Params, apiGet } from '@/utils/api'
+import { Params, apiGet, getLinksStoryblok } from '@/utils/api'
 import { ISbStoryData } from '@storyblok/react'
 import { GetStaticPaths, GetStaticProps } from 'next'
-import React, { FC } from 'react'
+import React, { FC, useMemo } from 'react'
 import StoryblokProvider from '@/components/Storyblok/StoryblokProvider'
 import { LanguageType } from '@/types/language-types'
+import { SlugContext, SlugContextProps } from '@/config/slugContext'
 
 interface SlugProps {
   story: ISbStoryData | null
+  links: InfoSlugListResponse
+  slug: string
 }
 
-export const getStaticPaths: GetStaticPaths = async ({ locales = [] }) => {
-  const data = await apiGet<InfoSlugListResponse>({
-    url: 'links/',
-    params: {
-      token: process.env.PREVIEW_SECRET_TOKEN,
-    },
-  })
+const linksParser = (data: InfoSlugListResponse): InfoSlug[] =>
+  Object.values(data.links || []) // Object<Object> парсим в array
+    .filter((story) => !story.is_folder) // убираем папки
 
-  const paths = Object.values(data.links || []) // Object<Object> парсим в array
-    .filter((story) => {
-      if (story.is_folder) {
-        // убираем папки
-        return false
-      }
-      return story.slug
-    })
+export const getStaticPaths: GetStaticPaths = async ({ locales = [] }) => {
+  const data = await getLinksStoryblok()
+
+  const paths = linksParser(data)
     .map((story) => {
       // парсим для getStaticPaths
       const slug = story.slug.split('/')
@@ -64,21 +59,31 @@ export const getStaticProps: GetStaticProps = async ({ params, locale = 'en', pr
     params: apiParams,
   })
 
+  const links = await getLinksStoryblok()
+
   return {
     props: {
       story: response.story || null,
       preview,
+      links,
+      slug: Array.isArray(params.slug) ? params.slug[0] : params.slug,
     },
     revalidate: 3600,
   }
 }
 
-const Slug: FC<SlugProps> = ({ story }) => {
+const Slug: FC<SlugProps> = ({ story, links, slug }) => {
+  const contextValue = useMemo<SlugContextProps>(() => ({ links: linksParser(links), slug }), [links])
+
   if (story === null) {
     return <h1 className='text-center'>Storyblok error</h1>
   }
 
-  return <StoryblokProvider story={story} />
+  return (
+    <SlugContext.Provider value={contextValue}>
+      <StoryblokProvider story={story} />
+    </SlugContext.Provider>
+  )
 }
 
 export default Slug

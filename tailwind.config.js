@@ -7,19 +7,6 @@ const getFont = (font) => [font, 'Arial', 'sans-serif']
 module.exports = {
   content: ['./pages/**/*.{js,jsx,ts,tsx}', './src/**/*.{js,jsx,ts,tsx}'],
   theme: {
-    colors: {
-      'organick-blue-dark': '#274C5B',
-      'organick-green': '#7EB693',
-      'organick-yellow': '#EFD372',
-      'organick-grey': '#D4D4D4',
-      'organick-white': '#F9F8F8',
-      'organick-green-white': '#EFF6F1',
-      'organick-dark': '#525C60',
-      'organick-special-green': '#68A47F',
-      'organick-line-grey': '#DEDDDD',
-      'default-white': '#FFFFFF',
-      'organick-price-grey': '#B8B8B8',
-    },
     container: {
       padding: '20px',
       center: true,
@@ -33,6 +20,20 @@ module.exports = {
       'yellowtail': getFont('Yellowtail'),
     },
     extend: {
+      colors: {
+        'organick-blue-dark': '#274C5B',
+        'organick-green': '#7EB693',
+        'organick-yellow': '#EFD372',
+        'organick-grey': '#D4D4D4',
+        'organick-white': '#F9F8F8',
+        'organick-green-white': '#EFF6F1',
+        'organick-dark': '#525C60',
+        'organick-special-green': '#68A47F',
+        'organick-line-grey': '#DEDDDD',
+        'default-white': '#FFFFFF',
+        'organick-price-grey': '#B8B8B8',
+        'grey-menu': '#f2f0f0'
+      },
       fontSize: {
         'organick-h1-lg': ['4.32rem', { lineHeight: '82px', fontWeight: '800' }],
         'organick-h2-lg': ['3.13rem', { lineHeight: '58px', fontWeight: '800' }],
@@ -76,7 +77,11 @@ module.exports = {
         emoji: '1.1em',
         'vegetable-card-big': '483px',
         'vegetable-card-small': '423px',
+        logo: '53px'
       },
+      zIndex: {
+        full: '999'
+      }
     },
   },
   plugins: [],
