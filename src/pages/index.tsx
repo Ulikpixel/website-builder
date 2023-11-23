@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import { NextPage } from 'next'
 import Link from 'next/link'
+import Preloader from '@/components/Atoms/Preloader/Preloader'
 
 const Home: NextPage = () => {
   const langButton = useRef<HTMLAnchorElement>(null)
@@ -11,7 +12,7 @@ const Home: NextPage = () => {
 
   return (
     <div className='w-full h-screen flex items-center justify-center'>
-      <h3>перенаправляем на страницу ...</h3>
+      <Preloader />
       <Link href='/home' className='opacity-0' locale='en' ref={langButton}>
         home
       </Link>

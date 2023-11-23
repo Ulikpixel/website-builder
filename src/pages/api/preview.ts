@@ -18,7 +18,6 @@ export default async function preview(req: NextApiRequest, res: NextApiResponse)
     )
   )
 
-  const updatedSlug = slug === 'home' ? '' : slug
-  return res.redirect(`/${updatedSlug}?${params ? params[1] : ''}`)
+  return res.redirect(`/${slug}?${params ? params[1] : ''}`)
 }
 
