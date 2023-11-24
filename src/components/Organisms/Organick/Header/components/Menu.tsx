@@ -1,8 +1,12 @@
 import { SlugContext } from '@/config/slugContext'
 import { InfoSlug } from '@/types/storyblok-types'
 import clsx from 'clsx'
+import Image from 'next/image'
 import Link from 'next/link'
 import React, { FC, useContext } from 'react'
+import { usePathname } from 'next/navigation'
+import { useRouter } from 'next/router'
+import languageIcon from '../icons/language.svg'
 
 interface MenuProps {
   isMenu: boolean
@@ -12,6 +16,9 @@ interface MenuProps {
 
 const Menu: FC<MenuProps> = ({ isMenu, setIsMenu, links }) => {
   const slugInfo = useContext(SlugContext)
+  const pathname = usePathname()
+  const router = useRouter()
+
   const currentSlug: string | null = slugInfo?.slug || null
   return (
     <nav
@@ -33,11 +40,23 @@ const Menu: FC<MenuProps> = ({ isMenu, setIsMenu, links }) => {
               slug === currentSlug && 'bg-grey-menu',
             )}
           >
-            <Link className='text-organick-blue-dark text-lg font-semibold' href={real_path}>
+            <Link className='text-organick-blue-dark text-base font-semibold' href={real_path}>
               {name}
             </Link>
           </li>
         ))}
+        <li className='border-1.5 border-b py-2 cursor-pointer duration-300 hover:bg-grey-menu flex items-center justify-center gap-2'>
+          <Link
+            className='text-organick-blue-dark text-base font-semibold flex items-center gap-2'
+            href={pathname}
+            locale={router.locale === 'en' ? 'ru' : 'en'}
+          >
+            <Image src={languageIcon} alt='language' className='w-8 h-8 m-auto' />
+            <p className='text-organick-blue-dark text-base font-semibold'>
+              {router.locale === 'en' ? 'Russian language' : 'Анлийский язык'}
+            </p>
+          </Link>
+        </li>
       </ul>
     </nav>
   )
