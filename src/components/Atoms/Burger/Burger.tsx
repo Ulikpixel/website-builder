@@ -1,12 +1,13 @@
 import clsx from 'clsx'
 import React, { FC } from 'react'
+import uniqid from 'uniqid'
 
 interface BurgerProps {
   isActive: boolean
   onClick: () => void
 }
 
-const items = Array(3).fill(Math.random())
+const items = Array(3).fill(uniqid())
 
 const Burger: FC<BurgerProps> = ({ isActive, onClick }) => (
   <div
@@ -16,7 +17,8 @@ const Burger: FC<BurgerProps> = ({ isActive, onClick }) => (
   >
     {items.map((key, idx) => (
       <span
-        key={key}
+        // eslint-disable-next-line react/no-array-index-key
+        key={`${key}-${idx}`}
         className={clsx('w-full h-[2.5px] bg-organick-blue-dark block transition-all', {
           'opacity-0': isActive && idx === 1,
           'rotate-45 absolute top-4': isActive && idx === 0,

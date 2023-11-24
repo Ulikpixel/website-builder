@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react'
 import Image from 'next/image'
 import reactStringReplace from 'react-string-replace'
+import uniqid from 'uniqid'
 
 // Импорт SVG иконок из файлов
 import LoveIcon from './icons/love.svg'
@@ -35,7 +36,7 @@ export function insertEmojis(value: InsertEmojisValue): React.ReactNode {
 
     // Возвращение React-элемента с смайликом и уникальным ключом
     return (
-      <span key={`${i}-${Math.random()}`} className='inline-block relative top-1'>
+      <span key={`${i}-${uniqid()}`} className='inline-block relative top-1'>
         {staticEmojiMap[keyword]}
       </span>
     )

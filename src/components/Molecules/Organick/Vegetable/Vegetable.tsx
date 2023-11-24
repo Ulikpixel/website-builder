@@ -1,6 +1,7 @@
 import { VegetableStoryblok } from '@/types/storyblok-bloks/storyblok-bloks-types'
 import React, { FC } from 'react'
 import { insertEmojis } from '@/utils/emoji-parser/emoji-parser'
+import uniqid from 'uniqid'
 import StarIcon from './icons/Star'
 
 interface VegetableProps {
@@ -38,9 +39,10 @@ const Vegetable: FC<VegetableProps> = ({ blok }) => (
         </div>
         <div className='flex gap-1'>
           {Array(5)
-            .fill(Math.random())
+            .fill(uniqid())
             .map((key, idx) => (
-              <StarIcon key={key} pathFill={idx + 1 <= Number(blok.grade) ? starYellow : starGrey} />
+              // eslint-disable-next-line react/no-array-index-key
+              <StarIcon key={`${idx}-${key}`} pathFill={idx + 1 <= Number(blok.grade) ? starYellow : starGrey} />
             ))}
         </div>
       </div>

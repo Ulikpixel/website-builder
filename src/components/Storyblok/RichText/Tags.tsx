@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import React, { ReactNode, ReactElement } from 'react'
 import { InsertEmojisValue, insertEmojis } from '@/utils/emoji-parser/emoji-parser'
 import {
   MARK_BOLD,
@@ -14,14 +14,14 @@ interface LevelHeading {
 }
 
 interface MarkResolvers {
-  [MARK_BOLD]: (children: ReactNode) => React.ReactElement
-  [MARK_STRIKE]: (children: ReactNode) => React.ReactElement
-  [MARK_UNDERLINE]: (children: ReactNode) => React.ReactElement
+  [MARK_BOLD]: (children: ReactNode) => ReactElement
+  [MARK_STRIKE]: (children: ReactNode) => ReactElement
+  [MARK_UNDERLINE]: (children: ReactNode) => ReactElement
 }
 
 interface NodeResolvers {
-  [NODE_PARAGRAPH]: (children: ReactNode) => React.ReactElement
-  [NODE_HEADING]: (children: ReactNode, { level }: LevelHeading) => React.ReactElement
+  [NODE_PARAGRAPH]: (children: ReactNode) => ReactElement
+  [NODE_HEADING]: (children: ReactNode, { level }: LevelHeading) => ReactElement
 }
 
 // Группируйте разрешители в объекты, что делает код более упорядоченным

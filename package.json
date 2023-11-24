@@ -30,7 +30,8 @@
     "react-dom": "^18.2.0",
     "react-string-replace": "^1.1.1",
     "storyblok-rich-text-react-renderer": "^2.9.0",
-    "swiper": "^11.0.4"
+    "swiper": "^11.0.4",
+    "uniqid": "^5.4.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.7.1",
@@ -42,6 +43,7 @@
     "@types/node": "^20.5.7",
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
+    "@types/uniqid": "^5.3.4",
     "@typescript-eslint/eslint-plugin": "^6.5.0",
     "@typescript-eslint/parser": "^6.5.0",
     "autoprefixer": "^10.4.15",
