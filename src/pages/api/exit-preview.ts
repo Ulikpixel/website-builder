@@ -12,5 +12,8 @@ export default async function exit(req: NextApiRequest, res: NextApiResponse) {
   )
 
   const { slug } = req.query
-  res.redirect(`/${slug}`)
+
+  const updatedSlug = slug === 'home' ? '' : slug
+
+  res.redirect(`/${updatedSlug}`)
 }

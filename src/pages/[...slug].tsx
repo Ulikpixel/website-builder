@@ -4,17 +4,12 @@ import { InfoSlug, InfoSlugListResponse } from '@/types/storyblok-types'
 import { API_TOKEN_STORYBLOK, PREVIEW_TOKEN_STORYBLOK } from '@/config'
 import { Params, apiGet, getLinksStoryblok } from '@/utils/api'
 import { ISbStoryData } from '@storyblok/react'
-import { GetStaticPaths, GetStaticProps } from 'next'
-import React, { FC, useMemo } from 'react'
+import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
+import React, { useMemo } from 'react'
 import StoryblokProvider from '@/components/Storyblok/StoryblokProvider'
 import { LanguageType } from '@/types/language-types'
 import { SlugContext, SlugContextProps } from '@/config/slugContext'
-
-interface SlugProps {
-  story: ISbStoryData | null
-  links: InfoSlugListResponse
-  slug: string
-}
+import { SlugProps } from '@/types/slug-types'
 
 const linksParser = (data: InfoSlugListResponse): InfoSlug[] =>
   Object.values(data.links || []) // Object<Object> парсим в array
@@ -58,7 +53,7 @@ export const getStaticProps: GetStaticProps = async ({ params, locale = 'en', pr
     url: `stories/${slugs}`,
     params: apiParams,
   })
-
+  console.log(`stories/${slugs}`)
   const links = await getLinksStoryblok()
 
   return {
@@ -72,7 +67,7 @@ export const getStaticProps: GetStaticProps = async ({ params, locale = 'en', pr
   }
 }
 
-const Slug: FC<SlugProps> = ({ story, links, slug }) => {
+const Slug: NextPage<SlugProps> = ({ story, links, slug }) => {
   const contextValue = useMemo<SlugContextProps>(() => ({ links: linksParser(links), slug }), [links])
 
   if (story === null) {
