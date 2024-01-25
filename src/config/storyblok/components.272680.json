@@ -2,33 +2,30 @@
   "components": [
     {
       "name": "advertising-card",
-      "display_name": "карточка с продуктом",
-      "created_at": "2023-11-17T10:55:24.193Z",
-      "updated_at": "2023-11-17T11:09:39.057Z",
-      "id": 4898644,
+      "display_name": null,
+      "created_at": "2024-01-25T12:37:43.641Z",
+      "updated_at": "2024-01-25T12:38:45.006Z",
+      "id": 5230284,
       "schema": {
         "title": {
           "type": "text",
           "required": true,
           "translatable": true,
-          "display_name": "Заголовок",
-          "max_length": 50
+          "display_name": "заголовок"
         },
         "up_title": {
           "type": "text",
-          "display_name": "верхний текст",
           "required": true,
           "translatable": true,
-          "max_length": 30
+          "display_name": "верхний текст"
         },
         "background": {
           "type": "asset",
           "required": true,
-          "display_name": "Фон карточки",
+          "display_name": "картинка",
           "filetypes": [
             "images"
-          ],
-          "allow_external_url": true
+          ]
         }
       },
       "image": null,
@@ -38,41 +35,41 @@
       "is_nestable": true,
       "all_presets": [],
       "preset_id": null,
-      "real_name": "карточка с продуктом",
+      "real_name": "advertising-card",
       "component_group_uuid": null,
-      "color": "#2db47d",
+      "color": "#395ece",
       "icon": null
     },
     {
       "name": "button",
       "display_name": "кнопка",
-      "created_at": "2023-11-16T13:14:38.709Z",
-      "updated_at": "2023-11-17T11:09:25.521Z",
-      "id": 4894132,
+      "created_at": "2024-01-25T12:19:28.118Z",
+      "updated_at": "2024-01-25T12:22:07.481Z",
+      "id": 5230220,
       "schema": {
         "text": {
           "type": "text",
           "required": true,
           "translatable": true,
-          "display_name": "содержимое"
+          "display_name": "содержание"
         },
         "variant": {
           "type": "option",
           "use_uuid": true,
-          "display_name": "вариант кнопки",
+          "display_name": "вариант",
           "options": [
             {
-              "_uid": "49965c02-1254-4a93-8ebb-cdcd01ec1387",
-              "name": "синий",
+              "_uid": "2cf46235-1956-4332-8349-1920d0baafb1",
+              "name": "темно-синий",
               "value": "blue-dark"
             },
             {
-              "_uid": "6e44b0b1-91fe-4399-9476-775aac8464ed",
+              "_uid": "43d4c4f3-411f-4131-9d75-ca4d2e5e27b2",
               "value": "white",
               "name": "белый"
             },
             {
-              "_uid": "14b71ded-bfe0-4532-b7a4-62856a0dde0b",
+              "_uid": "6d43d3d0-a152-400c-b983-505450e1bee8",
               "value": "yellow",
               "name": "желтый"
             }
@@ -80,14 +77,14 @@
           "exclude_empty_option": true
         },
         "icon": {
-          "type": "boolean"
+          "type": "boolean",
+          "display_name": "иконка"
         },
         "link": {
           "type": "multilink",
           "required": true,
           "translatable": true,
-          "display_name": "ссылка",
-          "allow_target_blank": true
+          "display_name": "ссылка"
         }
       },
       "image": null,
@@ -99,113 +96,112 @@
       "preset_id": null,
       "real_name": "кнопка",
       "component_group_uuid": null,
-      "color": "#2db47d",
+      "color": "#395ece",
       "icon": null
     },
     {
       "name": "container",
-      "display_name": "контейнер для контента",
-      "created_at": "2023-11-17T10:59:16.199Z",
-      "updated_at": "2023-11-22T15:34:04.044Z",
-      "id": 4898669,
+      "display_name": "контейнер",
+      "created_at": "2024-01-25T12:14:27.060Z",
+      "updated_at": "2024-01-25T12:53:21.078Z",
+      "id": 5230031,
       "schema": {
         "variants": {
           "type": "option",
           "use_uuid": true,
-          "display_name": "отступы между",
           "required": true,
+          "display_name": "варианты отступа",
+          "exclude_empty_option": true,
           "options": [
             {
-              "_uid": "027e8b9e-6986-4203-b018-ee2c4b9d7da4",
-              "name": "small",
+              "_uid": "1b41246b-edfa-4bb5-a5ae-f385e553f607",
+              "name": "маленький",
               "value": "small"
             },
             {
-              "_uid": "bfd661f9-d8fc-4247-b3cb-894f8ab3c966",
+              "_uid": "c17787a1-6ac9-4229-ab67-bd5834e00344",
               "value": "medium",
-              "name": "medium"
+              "name": "средний"
             },
             {
-              "_uid": "0c31b4ac-1f66-4c62-8294-4e386f257695",
+              "_uid": "7a9e042f-b7dc-4870-ad34-1774a12f0452",
               "value": "large",
-              "name": "large"
+              "name": "большой"
             },
             {
-              "_uid": "c6de6264-fe86-4854-94ab-5ad250881921",
+              "_uid": "8551d5f4-c40c-4e4b-ae2a-99df9237e949",
               "value": "xlarge",
-              "name": "xlarge"
+              "name": "экстра большй"
             }
-          ],
-          "exclude_empty_option": true
+          ]
         },
         "background": {
           "type": "option",
           "use_uuid": true,
+          "exclude_empty_option": true,
           "options": [
             {
-              "_uid": "60c7f084-b008-4b8d-b787-5ee5ebe1100c",
-              "name": "темно синий",
+              "_uid": "d38e39a4-03a0-46b1-b717-372d22638f8a",
+              "name": "темно-синий",
               "value": "blue-dark"
             },
             {
-              "_uid": "960dd70b-fd7e-471d-8e24-cf53556a5dea",
+              "_uid": "c3fee4d8-d07d-4a94-af26-4321456fd216",
               "value": "green",
               "name": "зеленый"
             },
             {
-              "_uid": "47d3c2ce-f8f5-4785-bd64-e707e903e8bc",
+              "_uid": "1376166a-33c3-4ffe-b5b5-e5fee85bc544",
               "value": "dark",
               "name": "темный"
             },
             {
-              "_uid": "969bcc2f-2f30-4a2d-865f-3d6d11d55101",
+              "_uid": "73180dc2-5ebc-4227-9a03-bf5553cc7f1d",
               "value": "grey",
               "name": "серый"
             },
             {
-              "_uid": "70fe102a-bd01-446d-a9c7-9f853dc39793",
+              "_uid": "437a6771-6fdd-4e1b-97ff-ca5bbd99212d",
               "value": "green-opacity",
-              "name": "цветло зереный"
+              "name": "светло-зеленый"
             }
           ],
-          "exclude_empty_option": true
+          "display_name": "фон"
         },
         "grid": {
           "type": "option",
           "use_uuid": true,
-          "required": false,
-          "exclude_empty_option": true,
           "options": [
             {
-              "_uid": "35b8afee-9782-4f9c-acf6-0edd8e5a85ed",
+              "_uid": "b5a92dc6-5547-43b7-aa63-5caf25c8d444",
               "name": "2 колонки",
               "value": "2"
             },
             {
-              "_uid": "b2dbbb83-c7dd-499e-9abb-2d31b73f168d",
+              "_uid": "6746ba71-0d75-49d8-a45c-95126fa6a0c8",
               "value": "3",
               "name": "3 колонки"
             },
             {
-              "_uid": "7f3c41e8-f912-4d0f-8563-7dfd1b94816b",
+              "_uid": "c755801a-490b-497d-98a1-99425798226f",
               "value": "4",
               "name": "4 колонки"
             }
           ],
-          "display_name": "сетка"
+          "display_name": "сетка",
+          "exclude_empty_option": true
         },
         "content": {
           "type": "bloks",
-          "display_name": "контент контейнера",
           "required": true,
           "minimum": 1,
-          "maximum": 4,
+          "display_name": "контент",
           "restrict_type": "",
           "restrict_components": true,
           "component_whitelist": [
+            "vegetable",
             "advertising-card",
-            "product",
-            "vegetable"
+            "product"
           ]
         }
       },
@@ -216,53 +212,49 @@
       "is_nestable": true,
       "all_presets": [],
       "preset_id": null,
-      "real_name": "контейнер для контента",
+      "real_name": "контейнер",
       "component_group_uuid": null,
       "color": "#ff6159",
       "icon": null
     },
     {
       "name": "hero",
-      "display_name": "главный экран",
-      "created_at": "2023-11-16T13:11:30.849Z",
-      "updated_at": "2023-11-16T13:20:20.952Z",
-      "id": 4894127,
+      "display_name": "",
+      "created_at": "2024-01-25T12:22:23.989Z",
+      "updated_at": "2024-01-25T12:34:36.275Z",
+      "id": 5230224,
       "schema": {
         "up_title": {
           "type": "text",
-          "pos": 0,
           "required": true,
           "translatable": true,
-          "display_name": "Особый заголовок"
+          "display_name": "верхний текст"
         },
         "title": {
           "type": "text",
-          "pos": 1,
+          "display_name": "заголовок",
           "required": true,
-          "translatable": true,
-          "display_name": "заголовок"
+          "translatable": true
         },
         "background": {
           "type": "asset",
           "required": true,
-          "translatable": true,
           "display_name": "фон",
           "filetypes": [
             "images"
-          ],
-          "allow_external_url": true
+          ]
         },
         "content": {
           "type": "bloks",
+          "minimum": 1,
+          "maximum": 1,
           "restrict_type": "",
           "restrict_components": true,
           "component_whitelist": [
             "button"
           ],
-          "minimum": 1,
-          "maximum": 1,
-          "required": true,
-          "display_name": "кнопка"
+          "display_name": "кнопка",
+          "required": true
         }
       },
       "image": null,
@@ -272,58 +264,54 @@
       "is_nestable": true,
       "all_presets": [],
       "preset_id": null,
-      "real_name": "главный экран",
+      "real_name": "hero",
       "component_group_uuid": null,
       "color": "#ff6159",
       "icon": null
     },
     {
       "name": "organick",
-      "display_name": "органические продукты",
-      "created_at": "2023-11-16T12:57:59.764Z",
-      "updated_at": "2023-11-17T14:44:06.780Z",
-      "id": 4893968,
+      "display_name": null,
+      "created_at": "2024-01-25T12:12:56.509Z",
+      "updated_at": "2024-01-25T12:48:02.583Z",
+      "id": 5230028,
       "schema": {
         "title": {
           "type": "text",
           "pos": 0,
-          "display_name": "Заголовок",
           "required": true,
           "translatable": true,
-          "tooltip": true,
-          "description": "Title для SEO - оптимизаций"
-        },
-        "description": {
-          "type": "text",
-          "pos": 1,
-          "display_name": "Описание",
-          "required": true,
-          "translatable": true,
-          "description": "Поле Description для SEO - оптимизаций",
-          "tooltip": true
-        },
-        "tab-da1d45fb-dd40-495a-a639-4528c1099a9a": {
-          "display_name": "seo",
-          "keys": [
-            "title",
-            "description"
-          ],
-          "pos": 2,
-          "type": "tab"
+          "display_name": "заголовок страницы"
         },
         "content": {
           "type": "bloks",
-          "display_name": "Контент",
+          "pos": 1,
+          "display_name": "контент блока",
           "required": true,
           "minimum": 1,
           "restrict_type": "",
           "restrict_components": true,
           "component_whitelist": [
-            "menu",
             "hero",
             "container",
             "vegetable-slider"
           ]
+        },
+        "description": {
+          "type": "text",
+          "pos": 2,
+          "required": true,
+          "translatable": true,
+          "display_name": "описание страницы"
+        },
+        "tab-056e4d0c-a39d-417c-a7b1-da87f5cbea8b": {
+          "display_name": "SEO",
+          "keys": [
+            "description",
+            "title"
+          ],
+          "pos": 3,
+          "type": "tab"
         }
       },
       "image": null,
@@ -333,28 +321,28 @@
       "is_nestable": false,
       "all_presets": [],
       "preset_id": null,
-      "real_name": "органические продукты",
+      "real_name": "organick",
       "component_group_uuid": null,
       "color": "#fbce41",
       "icon": null
     },
     {
       "name": "product",
-      "display_name": "продукт с картинкой",
-      "created_at": "2023-11-22T15:13:46.729Z",
-      "updated_at": "2023-11-22T15:14:43.866Z",
-      "id": 4922937,
+      "display_name": null,
+      "created_at": "2024-01-25T12:38:59.322Z",
+      "updated_at": "2024-01-25T12:39:44.312Z",
+      "id": 5230286,
       "schema": {
         "title": {
           "type": "text",
-          "display_name": "заголовок",
           "required": true,
-          "translatable": true
+          "translatable": true,
+          "display_name": "заголовок"
         },
         "cover": {
           "type": "asset",
-          "display_name": "ajnj",
-          "required": false,
+          "required": true,
+          "display_name": "картинка",
           "filetypes": [
             "images"
           ]
@@ -367,51 +355,47 @@
       "is_nestable": true,
       "all_presets": [],
       "preset_id": null,
-      "real_name": "продукт с картинкой",
+      "real_name": "product",
       "component_group_uuid": null,
-      "color": "#00b3b0",
+      "color": "#395ece",
       "icon": null
     },
     {
       "name": "vegetable",
-      "display_name": "овощи или фрукты",
-      "created_at": "2023-11-17T13:31:26.928Z",
-      "updated_at": "2023-11-18T16:14:35.210Z",
-      "id": 4900054,
+      "display_name": null,
+      "created_at": "2024-01-25T12:29:53.940Z",
+      "updated_at": "2024-01-25T13:03:19.622Z",
+      "id": 5230266,
       "schema": {
         "name": {
           "type": "text",
-          "pos": 0,
           "required": true,
           "translatable": true,
           "display_name": "имя продукта"
         },
         "cover": {
           "type": "asset",
-          "pos": 1,
-          "required": true,
           "display_name": "фото продукта",
+          "required": true,
           "filetypes": [
             "images"
-          ],
-          "allow_external_url": true
+          ]
         },
         "type": {
           "type": "option",
           "use_uuid": true,
-          "pos": 2,
           "required": true,
           "display_name": "тип продукта",
           "options": [
             {
-              "_uid": "3c1ab0ab-16dc-4afd-9fb7-e41c3eb998e8",
-              "name": "овощи",
+              "_uid": "dbada43b-a5f5-4f99-af51-b008e6a0b5dd",
+              "name": "овощь",
               "value": "vegetable"
             },
             {
-              "_uid": "9c47f953-0534-46b9-8222-0e64c562221c",
+              "_uid": "8c2c3267-5111-4845-a488-b8a6e02d4881",
               "value": "fruits",
-              "name": "фрукты"
+              "name": "фрукт"
             }
           ],
           "exclude_empty_option": true
@@ -419,32 +403,31 @@
         "grade": {
           "type": "option",
           "use_uuid": true,
-          "pos": 3,
           "required": true,
-          "display_name": "оценка продукта",
+          "display_name": "оценка",
           "options": [
             {
-              "_uid": "f7d14142-b888-4593-a659-ad15b377abbc",
+              "_uid": "f28246d6-3d49-44a6-8c12-377b0153ec8e",
               "name": "1 звезда",
               "value": "1"
             },
             {
-              "_uid": "e7d5eac6-503c-43f3-aad6-5baeba089f12",
+              "_uid": "9604c653-da96-4918-9f42-dca5975eaec9",
               "value": "2",
               "name": "2 звезды"
             },
             {
-              "_uid": "edc6b203-95e4-401e-961e-e3ddc2f395b7",
+              "_uid": "f4aa8300-6655-4359-920f-8c94b40f0cc9",
               "value": "3",
               "name": "3 звезды"
             },
             {
-              "_uid": "262db464-1737-4a54-b85f-d0d11dffff86",
+              "_uid": "9f5f2b56-1fd6-4f61-9010-cf23b854e968",
               "value": "4",
               "name": "4 звезды"
             },
             {
-              "_uid": "bbe318ac-88e8-44c0-a803-b1c9349effea",
+              "_uid": "21edc23d-9cfb-42da-bca4-dba393086332",
               "value": "5",
               "name": "5 звезд"
             }
@@ -453,16 +436,15 @@
         },
         "price": {
           "type": "number",
-          "pos": 4,
-          "display_name": "цена",
           "required": true,
+          "display_name": "цена",
           "min_value": 1
         },
         "discount": {
           "type": "number",
-          "pos": 5,
+          "display_name": "скидка",
           "required": false,
-          "display_name": "скидка"
+          "min_value": 1
         }
       },
       "image": null,
@@ -472,89 +454,80 @@
       "is_nestable": true,
       "all_presets": [],
       "preset_id": null,
-      "real_name": "овощи или фрукты",
+      "real_name": "vegetable",
       "component_group_uuid": null,
-      "color": "#2db47d",
+      "color": "#395ece",
       "icon": null
     },
     {
       "name": "vegetable-slider",
-      "display_name": "слайдер по овощам и фруктам",
-      "created_at": "2023-11-17T13:28:33.948Z",
-      "updated_at": "2023-11-17T15:12:43.971Z",
-      "id": 4900047,
+      "display_name": "слайдер с продуктами",
+      "created_at": "2024-01-25T12:25:38.509Z",
+      "updated_at": "2024-01-25T13:16:12.349Z",
+      "id": 5230227,
       "schema": {
         "backgrounds": {
           "type": "option",
           "use_uuid": true,
-          "pos": 0,
-          "required": false,
           "display_name": "фон",
-          "exclude_empty_option": true,
           "options": [
             {
-              "_uid": "3154c3e8-069b-4d13-ba1a-b853ba145470",
-              "name": "темно синий",
+              "_uid": "75a550f0-a966-48c4-a4d0-6b19d48ca015",
+              "name": "темно-синий",
               "value": "blue-dark"
             },
             {
-              "_uid": "5eb73854-7f4e-4f97-acc6-e90f5bf0425d",
+              "_uid": "5818c979-c35c-49c5-8a1b-5a8c597c6be9",
               "value": "green",
               "name": "зеленый"
             },
             {
-              "_uid": "4e224212-46f9-443f-9ad0-551bfe9984cd",
+              "_uid": "25c4c6aa-ba42-4edc-b611-f274f9a07c21",
               "value": "dark",
               "name": "темный"
             },
             {
-              "_uid": "071b3952-86db-4988-8fef-10a4e97014fc",
+              "_uid": "da84d6a1-db2a-4d40-aa23-eef6890b54d8",
               "value": "grey",
               "name": "серый"
             }
-          ]
+          ],
+          "exclude_empty_option": true
         },
         "up_text": {
           "type": "text",
-          "pos": 1,
           "display_name": "верхний текст",
           "required": true,
-          "translatable": true,
-          "max_length": 50
+          "translatable": true
         },
         "title": {
           "type": "text",
-          "pos": 2,
+          "display_name": "заголовок",
           "required": true,
-          "translatable": true,
-          "display_name": "Заголовок",
-          "max_length": 100
+          "translatable": true
         },
         "content": {
           "type": "bloks",
-          "pos": 3,
-          "required": true,
-          "minimum": 4,
-          "maximum": 12,
-          "display_name": "товары",
           "restrict_type": "",
           "restrict_components": true,
           "component_whitelist": [
             "vegetable"
-          ]
+          ],
+          "minimum": 4,
+          "display_name": "продукты",
+          "required": true
         },
         "buttons": {
           "type": "bloks",
-          "pos": 4,
+          "display_name": "кнопка",
+          "minimum": 1,
+          "maximum": 1,
           "restrict_type": "",
           "restrict_components": true,
           "component_whitelist": [
             "button"
           ],
-          "minimum": 1,
-          "maximum": 1,
-          "required": true,
-          "display_name": "кнопка"
+          "required": true
         }
       },
       "image": null,
@@ -564,7 +537,7 @@
       "is_nestable": true,
       "all_presets": [],
       "preset_id": null,
-      "real_name": "слайдер по овощам и фруктам",
+      "real_name": "слайдер с продуктами",
       "component_group_uuid": null,
       "color": "#ff6159",
       "icon": null

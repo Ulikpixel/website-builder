@@ -17,7 +17,7 @@
     "clean": "rimraf out/",
     "prepare": "is-ci || husky install",
     "commit": "cz",
-    "generate-sb-types": "storyblok-generate-ts source=./src/config/storyblok/components.261940.json target=./src/types/storyblok-bloks/storyblok-bloks-types.ts"
+    "generate-sb-types": "storyblok-generate-ts source=./src/config/storyblok/components.272680.json target=./src/types/storyblok-bloks/storyblok-bloks-types.ts"
   },
   "dependencies": {
     "@storyblok/react": "^2.4.7",
