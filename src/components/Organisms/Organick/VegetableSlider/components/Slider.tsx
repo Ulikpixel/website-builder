@@ -3,7 +3,6 @@ import React, { FC, useRef } from 'react'
 import Vegetable from '@/components/Molecules/Organick/Vegetable/Vegetable'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination } from 'swiper/modules'
-import uniqid from 'uniqid'
 import ArrowImage from './ArrowImage'
 
 interface SliderWithArrowsProps {
@@ -50,9 +49,9 @@ const Slider: FC<SliderWithArrowsProps> = ({ blok }) => {
         }}
         breakpoints={breakpoints}
       >
-        {blok.content.map((nestedBlok, idx) => (
-          // eslint-disable-next-line react/no-array-index-key
-          <SwiperSlide key={`${idx}-${uniqid()}`} tag='li'>
+        {blok.content.map((nestedBlok) => (
+          /* eslint-disable no-underscore-dangle */
+          <SwiperSlide key={nestedBlok._uid} tag='li'>
             <Vegetable blok={nestedBlok} />
           </SwiperSlide>
         ))}

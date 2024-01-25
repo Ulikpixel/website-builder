@@ -5,7 +5,6 @@ import { InfoSlugListResponse } from '@/types/storyblok-types'
 import { StoryblokComponent, storyblokEditable } from '@storyblok/react'
 import { NextSeo } from 'next-seo'
 import React, { FC } from 'react'
-import uniqid from 'uniqid'
 
 interface OrganickProps {
   blok: OrganickStoryblok
@@ -19,8 +18,8 @@ const Organick: FC<OrganickProps> = ({ blok }) => (
     <Header />
     <main {...storyblokEditable(blok)}>
       {blok.content.map((nestedBlok, idx) => (
-        // eslint-disable-next-line react/no-array-index-key
-        <StoryblokComponent blok={nestedBlok} key={`${idx}-${uniqid()}`} />
+        /* eslint-disable no-underscore-dangle */
+        <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
       ))}
     </main>
     <Footer />

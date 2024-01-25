@@ -1,13 +1,10 @@
 import clsx from 'clsx'
 import React, { FC } from 'react'
-import uniqid from 'uniqid'
 
 interface BurgerProps {
   isActive: boolean
   onClick: () => void
 }
-
-const items = Array(3).fill(uniqid())
 
 const Burger: FC<BurgerProps> = ({ isActive, onClick }) => (
   <div
@@ -15,7 +12,7 @@ const Burger: FC<BurgerProps> = ({ isActive, onClick }) => (
     role='presentation'
     className='w-9 h-9 cursor-pointer z-full relative flex flex-col justify-between py-1.5'
   >
-    {items.map((key, idx) => (
+    {[1, 2, 3].map((key, idx) => (
       <span
         // eslint-disable-next-line react/no-array-index-key
         key={`${key}-${idx}`}

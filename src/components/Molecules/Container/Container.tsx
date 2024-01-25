@@ -2,7 +2,6 @@ import { ContainerStoryblok } from '@/types/storyblok-bloks/storyblok-bloks-type
 import { StoryblokComponent, storyblokEditable } from '@storyblok/react'
 import clsx from 'clsx'
 import React, { FC } from 'react'
-import uniqid from 'uniqid'
 import { backgrounds } from '@/config/backgrounds'
 import { grids, variants } from './Container.constants'
 
@@ -28,8 +27,8 @@ const Container: FC<ContainerProps> = ({ blok }) => (
       )}
     >
       {blok.content.map((nestedBlok, idx) => (
-        // eslint-disable-next-line react/no-array-index-key
-        <StoryblokComponent blok={nestedBlok} key={`${idx}-${uniqid()}`} idx={idx} />
+        /* eslint-disable no-underscore-dangle */
+        <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} idx={idx} />
       ))}
     </div>
   </section>
