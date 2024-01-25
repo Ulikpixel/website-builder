@@ -21,7 +21,7 @@ const Header: FC = () => {
         </div>
         {links.length > 0 && (
           <>
-            <Burger isActive={isMenu} onClick={() => setIsMenu(!isMenu)} className={isMenu ? '!fixed right-14' : ''} />
+            <Burger isActive={isMenu} onClick={() => setIsMenu(!isMenu)} />
             {isMenu && <Popup onClick={() => setIsMenu(false)} />}
             <Menu isMenu={isMenu} setIsMenu={setIsMenu} links={links} />
           </>
