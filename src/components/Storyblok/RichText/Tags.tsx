@@ -13,10 +13,10 @@ interface LevelHeading {
   level: 1 | 2 | 3 | 4 | 5 | 6
 }
 
+type Component = (children: ReactNode) => ReactElement
+
 interface MarkResolvers {
-  [MARK_BOLD]: (children: ReactNode) => ReactElement
-  [MARK_STRIKE]: (children: ReactNode) => ReactElement
-  [MARK_UNDERLINE]: (children: ReactNode) => ReactElement
+  [key: string]: Component
 }
 
 interface NodeResolvers {

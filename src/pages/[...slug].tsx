@@ -1,4 +1,4 @@
-import { Language } from '@/config/language'
+import { Language, LanguageType } from '@/config/language'
 import { Version } from '@/config/version'
 import { InfoSlug, InfoSlugListResponse } from '@/types/storyblok-types'
 import { API_TOKEN_STORYBLOK, PREVIEW_TOKEN_STORYBLOK } from '@/config'
@@ -7,7 +7,6 @@ import { ISbStoryData } from '@storyblok/react'
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 import React, { useMemo } from 'react'
 import StoryblokProvider from '@/components/Storyblok/StoryblokProvider'
-import { LanguageType } from '@/types/language-types'
 import { SlugContext, SlugContextProps } from '@/config/slugContext'
 import { SlugProps } from '@/types/slug-types'
 
@@ -21,7 +20,7 @@ export const getStaticPaths: GetStaticPaths = async ({ locales = [] }) => {
   const paths = linksParser(data)
     .map((story) => {
       // парсим для getStaticPaths
-      const slug = story.slug.split('/')
+      const slug: string[] = story.slug.split('/')
       return locales.map((locale) => ({ params: { slug }, locale }))
     })
     .flat()
@@ -53,7 +52,7 @@ export const getStaticProps: GetStaticProps = async ({ params, locale = 'en', pr
     url: `stories/${slugs}`,
     params: apiParams,
   })
-  console.log(`stories/${slugs}`)
+
   const links = await getLinksStoryblok()
 
   return {

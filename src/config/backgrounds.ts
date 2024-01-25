@@ -1,6 +1,10 @@
 import { ContainerStoryblok } from '@/types/storyblok-bloks/storyblok-bloks-types'
 
-export const backgrounds: { [key in NonNullable<ContainerStoryblok['background']>]: string } = {
+type BackgroundsKey = {
+  [key in NonNullable<ContainerStoryblok['background']>]: string
+}
+
+export const backgrounds: BackgroundsKey = {
   'blue-dark': 'bg-organick-blue-dark',
   green: 'bg-organick-green',
   dark: 'bg-organick-dark',

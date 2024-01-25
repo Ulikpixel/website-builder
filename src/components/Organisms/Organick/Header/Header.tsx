@@ -1,5 +1,6 @@
 import React, { FC, useContext, useState } from 'react'
 import Image from 'next/image'
+import { InfoSlug } from '@/types/storyblok-types'
 import Burger from '@/components/Atoms/Burger/Burger'
 import Popup from '@/components/Atoms/Popup/Popup'
 import { SlugContext } from '@/config/slugContext'
@@ -10,7 +11,7 @@ const Header: FC = () => {
   const [isMenu, setIsMenu] = useState<boolean>(false)
   const slugInfo = useContext(SlugContext)
 
-  const links = slugInfo?.links || []
+  const links: InfoSlug[] = slugInfo?.links || []
   return (
     <header>
       <div className='container flex justify-between items-center py-5'>
@@ -20,7 +21,7 @@ const Header: FC = () => {
         </div>
         {links.length > 0 && (
           <>
-            <Burger isActive={isMenu} onClick={() => setIsMenu(!isMenu)} />
+            <Burger isActive={isMenu} onClick={() => setIsMenu(!isMenu)} className={isMenu ? '!fixed right-14' : ''} />
             {isMenu && <Popup onClick={() => setIsMenu(false)} />}
             <Menu isMenu={isMenu} setIsMenu={setIsMenu} links={links} />
           </>

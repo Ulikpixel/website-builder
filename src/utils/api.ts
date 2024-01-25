@@ -1,9 +1,9 @@
-import { LanguageType } from '@/types/language-types'
+import { LanguageType } from '@/config/language'
+import { Version } from '@/config/version'
 import { InfoSlugListResponse } from '@/types/storyblok-types'
-import { VersionType } from '@/types/verstion-types'
 
 export interface Params {
-  version?: VersionType;
+  version?: typeof Version[keyof typeof Version];
   language?: LanguageType;
   datasource?: string;
   per_page?: string;

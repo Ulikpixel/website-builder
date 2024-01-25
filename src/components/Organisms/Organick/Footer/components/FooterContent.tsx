@@ -19,7 +19,7 @@ const contacts = [
   { title: 'Address', description: '88 road, borklyn street, USA' },
 ]
 
-const pages = ['Style Guide', '404 Not Found', 'Password Protected', 'Licences', 'Changelog']
+const pages: string[] = ['Style Guide', '404 Not Found', 'Password Protected', 'Licences', 'Changelog']
 
 const FooterContent = () => (
   <div className='container py-14 flex flex-col items-center justify-center gap-10 xl:gap-0 xl:flex-row '>

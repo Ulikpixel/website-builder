@@ -7,9 +7,9 @@ interface VegetableProps {
   blok: VegetableStoryblok
 }
 
-const starYellow = '#FFA858'
-const starGrey = '#B8B8B8'
-const numStars = [1, 2, 3, 4, 5]
+const starYellow: string = '#FFA858'
+const starGrey: string = '#B8B8B8'
+const numStars: number[] = [1, 2, 3, 4, 5]
 
 const Vegetable: FC<VegetableProps> = ({ blok }) => (
   <div className='h-vegetable-card-small sm:h-vegetable-card-big sm:w-vegetable-card-big bg-default-white rounded-2xl px-4 pt-4 md:px-7 md:pt-7'>
@@ -39,8 +39,7 @@ const Vegetable: FC<VegetableProps> = ({ blok }) => (
         </div>
         <div className='flex gap-1'>
           {numStars.map((key, idx) => (
-            // eslint-disable-next-line react/no-array-index-key
-            <StarIcon key={`${idx}-${key}`} pathFill={idx + 1 <= Number(blok.grade) ? starYellow : starGrey} />
+            <StarIcon key={key} pathFill={idx + 1 <= Number(blok.grade) ? starYellow : starGrey} />
           ))}
         </div>
       </div>

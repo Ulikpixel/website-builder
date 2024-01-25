@@ -6,8 +6,8 @@ interface ArrowImageProps {
   onClick: () => void
 }
 
-const arrowClass = 'w-10 absolute top-1/2 transform -translate-y-1/2 z-[999] cursor-pointer hidden md:block'
-const arrowColor = '#00BCD4'
+const arrowClass: string = 'w-10 absolute top-1/2 transform -translate-y-1/2 z-[999] cursor-pointer hidden md:block'
+const arrowColor: string = '#00BCD4'
 
 const ArrowImage: FC<ArrowImageProps> = ({ className, onClick }) => (
   <div className={`${arrowClass} ${className}`}>

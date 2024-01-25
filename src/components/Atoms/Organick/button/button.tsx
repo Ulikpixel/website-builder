@@ -45,7 +45,7 @@ const Button: FC<ButtonProps> = ({ children, variant = 'blue-dark', icon, ...pro
     className={clsx(
       `
         rounded-xl font-roboto font-bold transition-colors gap-2 items-center
-        px-6 py-1 text-xl sm:pt-1 sm:pb-1.5 lg:px-10 lg:pt-2.5 lg:pb-3 inline-flex
+        px-6 py-4 text-xl sm:py-5 lg:px-10 inline-flex
       `,
       variants[variant],
     )}

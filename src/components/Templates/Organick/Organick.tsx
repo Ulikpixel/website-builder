@@ -17,7 +17,7 @@ const Organick: FC<OrganickProps> = ({ blok }) => (
     <NextSeo title={blok.title} description={blok.description} />
     <Header />
     <main {...storyblokEditable(blok)}>
-      {blok.content.map((nestedBlok, idx) => (
+      {blok.content.map((nestedBlok) => (
         /* eslint-disable no-underscore-dangle */
         <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
       ))}
